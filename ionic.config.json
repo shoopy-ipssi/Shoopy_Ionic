@@ -1,0 +1,7 @@
+{
+  "name": "LeMeilleurCoin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
