@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-disconnect',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisconnectComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {}
-
+  Logout() {
+    sessionStorage.clear();
+    this.router.navigate(['Login']);
+  }
 }

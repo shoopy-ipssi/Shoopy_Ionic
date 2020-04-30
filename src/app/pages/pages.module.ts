@@ -12,6 +12,7 @@ import { MyFriendsComponent } from './my-friends/my-friends.component';
 import { ScenarioComponent } from './scenario/scenario.component';
 import { MyProfilComponent } from './my-profil/my-profil.component';
 import { SettingsComponent } from './settings/settings.component';
+import { DisconnectComponent } from './disconnect/disconnect.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'Scenario', component: ScenarioComponent},
       { path: 'MyProfil', component: MyProfilComponent},
       { path: 'Settings', component: SettingsComponent},
+      { path: 'Disconnect', component: DisconnectComponent},
 
     ]
   }
@@ -32,7 +34,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent, OffersListComponent, OfferDetailsComponent, AddOfferComponent, OfferComponent, MyFriendsComponent,
-    ScenarioComponent, MyProfilComponent, SettingsComponent],
+    ScenarioComponent, MyProfilComponent, SettingsComponent, DisconnectComponent],
   imports: [
     IonicModule,
     CommonModule,
