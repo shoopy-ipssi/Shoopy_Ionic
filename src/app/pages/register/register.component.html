@@ -1,3 +1,51 @@
-<p>
-  register works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+      <ion-toolbar>
+          <ion-title size="large">Register</ion-title>
+      </ion-toolbar>
+  </ion-header>
+
+  <form (ngSubmit)="Register()" [formGroup]="RegisterData">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+              <ion-label position="stacked">Email
+                  <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input required type="email" formControlName="email" name="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label position="stacked">Password
+                  <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input required type="password" formControlName="password" name="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Lastname
+                <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text" formControlName="lastname" name="firstname"></ion-input>
+        </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Firstname
+                <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text" formControlName="firstname" name="firstname"></ion-input>
+        </ion-item>
+
+          <div class="ion-padding">
+              <ion-button expand="block" type="submit" class="ion-no-margin" color="primary" type="submit">Register</ion-button>
+          </div>
+
+  </form>
+
+</ion-content>

@@ -13,6 +13,8 @@ import { ScenarioComponent } from './scenario/scenario.component';
 import { MyProfilComponent } from './my-profil/my-profil.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DisconnectComponent } from './disconnect/disconnect.component';
+import { LoadUsersComponent } from './load-users/load-users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -34,11 +36,12 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent, OffersListComponent, OfferDetailsComponent, AddOfferComponent, OfferComponent, MyFriendsComponent,
-    ScenarioComponent, MyProfilComponent, SettingsComponent, DisconnectComponent],
+    ScenarioComponent, MyProfilComponent, SettingsComponent, DisconnectComponent, LoadUsersComponent],
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
   exports: [RouterModule],

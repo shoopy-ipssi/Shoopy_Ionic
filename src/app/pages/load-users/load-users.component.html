@@ -1,0 +1,7 @@
+<ion-button (click)='getFriends()'>My Friends</ion-button>
+<ion-button (click)='getPotentialFriends()'>Users</ion-button>
+<ion-button (click)='getReceivedInvitation()'>Invitation</ion-button>
+<h1>{{type_button}}</h1>
+<ul >
+  <li *ngFor="let user of users">{{user.pseudo}}</li>
+</ul>
