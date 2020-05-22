@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
 
 @Component({
   selector: 'app-my-friends',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyFriendsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gv: VariablesGlobales) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.gv.checkUserLogged()
+  }
 
 }

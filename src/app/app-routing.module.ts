@@ -4,8 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { OffersListComponent } from './pages/offers-list/offers-list.component';
 import { AddOfferComponent } from './pages/add-offer/add-offer.component';
 import { PagesModule } from './pages/pages.module';
+import { RegisterComponent } from './pages/register/register.component';
 import { ScenarDetailsComponent } from './pages/scenar-details/scenar-details.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -15,6 +15,10 @@ const routes: Routes = [
   { path: 'details', component: ScenarDetailsComponent },
   { path: 'pages',
     loadChildren: () => import('./pages/pages.module').then( m => m.PagesModule)
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 

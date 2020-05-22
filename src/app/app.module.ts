@@ -13,13 +13,14 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { ScenarDetailsComponent } from './pages/scenar-details/scenar-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './pages/register/register.component';
 
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
   declarations: [AppComponent,
-    ScenarDetailsComponent],
+    ScenarDetailsComponent, RegisterComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
