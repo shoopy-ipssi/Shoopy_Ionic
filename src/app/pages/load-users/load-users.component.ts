@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 sessionStorage.setItem('UID', '1')
-let apiUrl = 'http://localhost:3000/'
+let apiUrl = 'https://shoopymysql.herokuapp.com/'
 const UID = sessionStorage.getItem('UID')
 @Component({
   selector: 'app-load-users',
@@ -9,7 +9,7 @@ const UID = sessionStorage.getItem('UID')
   styleUrls: ['./load-users.component.scss'],
 })
 export class LoadUsersComponent implements OnInit {
-  private users:  any[];
+  private users:  any;
   private type_button = 1
   constructor(private http: HttpClient) { }
 

@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { OffersListComponent } from './pages/offers-list/offers-list.component';
 import { AddOfferComponent } from './pages/add-offer/add-offer.component';
 import { PagesModule } from './pages/pages.module';
+import { ScenarDetailsComponent } from './pages/scenar-details/scenar-details.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     redirectTo: 'pages/home',
     pathMatch: 'full'
   },
+  { path: 'details', component: ScenarDetailsComponent },
   { path: 'pages',
     loadChildren: () => import('./pages/pages.module').then( m => m.PagesModule)
   }

@@ -15,6 +15,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { DisconnectComponent } from './disconnect/disconnect.component';
 import { LoadUsersComponent } from './load-users/load-users.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ScenarioPipe } from './scenario/scenario.pipe';
 
 const routes: Routes = [
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent, OffersListComponent, OfferDetailsComponent, AddOfferComponent, OfferComponent, MyFriendsComponent,
-    ScenarioComponent, MyProfilComponent, SettingsComponent, DisconnectComponent, LoadUsersComponent],
+    ScenarioComponent, MyProfilComponent, SettingsComponent, DisconnectComponent, LoadUsersComponent, ScenarioPipe],
   imports: [
     IonicModule,
     CommonModule,
