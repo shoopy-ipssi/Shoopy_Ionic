@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { OffersListComponent } from './pages/offers-list/offers-list.component';
 import { AddOfferComponent } from './pages/add-offer/add-offer.component';
 import { PagesModule } from './pages/pages.module';
 import { ScenarDetailsComponent } from './pages/scenar-details/scenar-details.component';
