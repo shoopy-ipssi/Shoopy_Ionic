@@ -1,0 +1,23 @@
+#list_friend {
+    list-style-type: none;
+
+}
+ion-button{
+    margin:0px
+}
+#list_friend div {
+    padding:5px;
+    margin: 5px 0;
+    border: 1px grey solid;
+    background-color: grey;
+    display: flex;
+
+}
+#list_friend div p {
+    margin:auto 0;
+    border-left: 1px black solid
+}
+.active .button-native{
+    color: #478AFF !important;
+    background-color: white !important;
+}

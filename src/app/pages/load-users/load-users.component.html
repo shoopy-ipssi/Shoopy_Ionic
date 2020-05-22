@@ -1,7 +1,20 @@
-<ion-button (click)='getFriends()'>My Friends</ion-button>
-<ion-button (click)='getPotentialFriends()'>Users</ion-button>
-<ion-button (click)='getReceivedInvitation()'>Invitation</ion-button>
-<h1>{{type_button}}</h1>
-<ul >
-  <li *ngFor="let user of users">{{user.pseudo}}</li>
-</ul>
+<div class="row">
+  <ion-button color="secondary" id="type_2" class="buttonLoad col-lg-2 offset-lg-2 col-4" (click)='getFriends()'>My Friends</ion-button>
+  <ion-button color="primary" id="type_1" class="buttonLoad col-lg-2 offset-lg-1 col-4" (click)='getPotentialFriends()'>Users</ion-button>
+  <ion-button color="secondary" id="type_3" class="buttonLoad col-lg-2 offset-lg-1 col-4" (click)='getReceivedInvitation()'>Invitation</ion-button>
+
+  <ul class="col-lg-10 offset-lg-1">
+    <li *ngFor="let user of users" id="list_friend">
+      <div class="row">
+        <img class="col-lg-1 col-4" src='../../../assets/img/Shoopy{{user.id_shoopy - 1}}.png'/>
+        <p class="col-lg-9 col-6">{{user.username}}</p>
+        <div class="col-lg-2 col-2" id="block_button">
+          <div *ngIf="type_button == 1" (click)="sendInvitation(user.id)"><ion-icon name="people-outline"></ion-icon></div>
+          <div *ngIf="type_button == 3" (click)="responseInvitation('accept', user.id)"><ion-icon name="checkmark-outline"></ion-icon></div>
+          <div *ngIf="type_button == 2 || type_button == 3" (click)="responseInvitation('refuse', user.id)"><ion-icon name="close-outline"></ion-icon></div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+

@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { ScenarDetailsComponent } from './pages/scenar-details/scenar-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
@@ -23,7 +24,8 @@ registerLocaleData(localeFr, 'fr-FR');
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
