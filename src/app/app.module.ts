@@ -12,12 +12,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './pages/register/register.component';
 
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RegisterComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

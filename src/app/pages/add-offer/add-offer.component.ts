@@ -18,7 +18,8 @@ export class AddOfferComponent implements OnInit {
 
   constructor(private offerService: OfferService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   submitForm() {
     this.offerService.addOffer(new Offer(uuidv4(), this.title, this.price, this.sellingPlace, "assets/img/no-image.png", this.description, this.longDescription));

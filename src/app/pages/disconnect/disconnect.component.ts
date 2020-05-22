@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
 
 @Component({
   selector: 'app-disconnect',
@@ -8,11 +9,14 @@ import { Router } from '@angular/router';
 })
 export class DisconnectComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, private gv: VariablesGlobales) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.gv.checkUserLogged()
+    this.Logout()
+  }
   Logout() {
     sessionStorage.clear();
-    this.router.navigate(['Login']);
+    this.router.navigate(['/register']);
   }
 }

@@ -4,19 +4,18 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { VariablesGlobales  } from './variables-globales/variables-globales.component';
+import { Router } from '@angular/router';
 
-
-sessionStorage.setItem('UID', '1')
+sessionStorage.setItem('UID', '3')
 const UID = sessionStorage.getItem('UID')
-const apiUrl = 'https://shoopymysql.herokuapp.com/'
-const data = { params: {userID: UID}}
-const headers = new HttpHeaders()
-            .set("Access-Control-Allow-Origin", "*");
 
+const data = { params: {userID: UID}} 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['app.component.scss'],
+  providers: [VariablesGlobales ]
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
@@ -72,7 +71,9 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private http: HttpClient
+    private http: HttpClient,
+    public gv: VariablesGlobales,
+    private router: Router
   ) {
     this.initializeApp();
   }
@@ -84,14 +85,16 @@ export class AppComponent implements OnInit {
     });
   };
   getUserMenu(){
-    console.log("load_information"+UID);
-    return this.http.get(`${apiUrl}user`, data, headers).subscribe(results => {this.user = results[0]; console.log(this.user)})
+    return this.http.get(`${this.gv.apiUrl}user`, data).subscribe(results => {
+      this.user = results[0]; 
+    })
   };
   ngOnInit() {
-    const path = window.location.pathname.split('pages/')[1];
-    if (path !== undefined) {
-      this.selectedIndex = this.appPages.findIndex(page => page.techTitle === path);
-    }
-    this.getUserMenu()
+      this.gv.checkUserLogged()
+      this.getUserMenu()
+      const path = window.location.pathname.split('pages/')[1];
+      if (path !== undefined) {
+        this.selectedIndex = this.appPages.findIndex(page => page.techTitle === path);
+      }  
   }
 }
