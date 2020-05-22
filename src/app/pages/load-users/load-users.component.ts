@@ -13,7 +13,7 @@ const headers = new HttpHeaders()
   styleUrls: ['./load-users.component.scss'],
 })
 export class LoadUsersComponent implements OnInit {
-  private users:  any[];
+  private users:  any;
   private type_button = 1
   constructor(private http: HttpClient) { }
 

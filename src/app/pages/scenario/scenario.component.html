@@ -13,4 +13,21 @@
             <ion-title size="large">Scénarios</ion-title>
         </ion-toolbar>
     </ion-header>
+
+    <table>
+        <tbody *ngFor="let scenario of scenarios | Profilter:searchTitle:searchTag">
+            <tr>
+                <td>
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-title>{{ scenario.title }}</ion-card-title>
+                            <ion-card-subtitle>{{ scenario.description }}</ion-card-subtitle>
+                            <ion-card-subtitle>{{ scenario.tag }}</ion-card-subtitle>
+                            <button [routerLink]="['/details:id']">Voir</button>
+                        </ion-card-header>
+                    </ion-card>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </ion-content>
