@@ -56,11 +56,6 @@ export class AppComponent implements OnInit {
       icon: 'journal'
     },
     {
-      title: 'Paramètres',
-      url: 'pages/Settings',
-      icon: 'flower'
-    },
-    {
       title: 'Déconnection',
       url: 'pages/Disconnect',
       icon: 'remove-circle'

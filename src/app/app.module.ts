@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ScenarDetailsComponent } from './pages/scenar-details/scenar-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './pages/register/register.component';
 
@@ -18,7 +19,8 @@ import { RegisterComponent } from './pages/register/register.component';
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent],
+  declarations: [AppComponent,
+    ScenarDetailsComponent, RegisterComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
