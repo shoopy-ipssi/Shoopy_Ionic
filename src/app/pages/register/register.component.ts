@@ -21,9 +21,9 @@ export class RegisterComponent implements OnInit {
     sessionStorage.setItem('isLoggedIn', true)
     console.log(sessionStorage.getItem('isLoggedIn'))
     if (sessionStorage.getItem('isLoggedIn')){
+      console.log("navigate")
       this.route.navigate(['/']);
     }
-
   }
   ngOnInit(){
 

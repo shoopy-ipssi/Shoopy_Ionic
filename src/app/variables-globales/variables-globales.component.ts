@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class VariablesGlobales {
   public apiUrl = 'https://shoopymysql.herokuapp.com/'
+  public mongUrl = 'https://shoopymongo.herokuapp.com/'
   public headers = new HttpHeaders({
     'Access-Control-Allow-Origin':'*',
   });
@@ -19,7 +20,7 @@ export class VariablesGlobales {
   checkUserLogged(){
     console.log('Check log state')
     if (!this.isLoggedIn){
-      this.route.navigate(['/register'])
+      this.route.navigate(['/login'])
     }
   }
 }

@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VariablesGlobales  } from './variables-globales/variables-globales.component';
 import { Router } from '@angular/router';
 
-sessionStorage.setItem('UID', '3')
+sessionStorage.setItem('UID', '1')
 const UID = sessionStorage.getItem('UID')
 
 const data = { params: {userID: UID}} 

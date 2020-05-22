@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MyFriendsComponent } from './my-friends/my-friends.component';
 import { ScenarioComponent } from './scenario/scenario.component';
 import { MyProfilComponent } from './my-profil/my-profil.component';
@@ -12,6 +12,7 @@ import { DisconnectComponent } from './disconnect/disconnect.component';
 import { LoadUsersComponent } from './load-users/load-users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScenarioPipe } from './scenario/scenario.pipe';
+
 
 const routes: Routes = [
   {
@@ -34,7 +35,7 @@ const routes: Routes = [
   imports: [
     IonicModule,
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forChild(routes)
   ],
