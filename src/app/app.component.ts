@@ -29,18 +29,6 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Annonces',
-      url: 'pages/listOffers',
-      techTitle: 'listOffers',
-      icon: 'list'
-    },
-    {
-      title: 'Publier une annonce',
-      url: 'pages/addOffer',
-      techTitle: 'addOffer',
-      icon: 'add'
-    },
-    {
       title: 'Mon Profil',
       url: 'pages/MyProfil',
       icon: 'happy'

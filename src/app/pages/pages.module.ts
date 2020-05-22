@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { OffersListComponent } from './offers-list/offers-list.component';
-import { OfferDetailsComponent } from './offer-details/offer-details.component';
-import { AddOfferComponent } from './add-offer/add-offer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { OfferComponent } from './offer/offer.component';
 import { FormsModule } from '@angular/forms';
 import { MyFriendsComponent } from './my-friends/my-friends.component';
 import { ScenarioComponent } from './scenario/scenario.component';
@@ -22,9 +18,6 @@ const routes: Routes = [
     path: '',
     children: [
       { path: 'home', component: HomeComponent},
-      { path: 'listOffers', component: OffersListComponent},
-      { path: 'addOffer', component: AddOfferComponent},
-      { path: 'offerDetails/:id', component: OfferDetailsComponent},
       { path: 'MyFriends', component: MyFriendsComponent},
       { path: 'Scenario', component: ScenarioComponent},
       { path: 'MyProfil', component: MyProfilComponent},
@@ -36,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, OffersListComponent, OfferDetailsComponent, AddOfferComponent, OfferComponent, MyFriendsComponent,
+  declarations: [HomeComponent, MyFriendsComponent,
     ScenarioComponent, MyProfilComponent, SettingsComponent, DisconnectComponent, LoadUsersComponent, ScenarioPipe],
   imports: [
     IonicModule,
