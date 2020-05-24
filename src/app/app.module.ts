@@ -16,19 +16,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PlayComponent } from './pages/play/play.component';
 
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent, PlayComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     StatusBar,
