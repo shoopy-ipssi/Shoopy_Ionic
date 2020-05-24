@@ -27,7 +27,7 @@ public scenarios;
     };
     this.route.queryParamMap.pipe(map(params => params.get('page'))).subscribe(page => this.config.currentPage = page);
    }
- 
+
   ngOnInit() {
     this.http.get(this.gv.apiUrl+'scenarios', { headers: this.gv.headers }).subscribe((res: Response) => { this.scenarios = res});
   }

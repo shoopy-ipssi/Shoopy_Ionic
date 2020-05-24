@@ -23,7 +23,7 @@
                             <ion-card-title>{{ scenario.name }}</ion-card-title>
                             <ion-card-subtitle>{{ scenario.resume }}</ion-card-subtitle>
                             <ion-card-subtitle>{{ scenario.tags }}</ion-card-subtitle>
-                            <button [routerLink]="['/details:id']">Voir</button>
+                            <ion-button [routerLink]="['/play', scenario.id]">Jouer</ion-button>
                         </ion-card-header>
                     </ion-card>
                 </td>

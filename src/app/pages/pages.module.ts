@@ -12,7 +12,8 @@ import { DisconnectComponent } from './disconnect/disconnect.component';
 import { LoadUsersComponent } from './load-users/load-users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScenarioPipe } from './scenario/scenario.pipe';
-import { ScenarDetailsComponent } from './scenar-details/scenar-details.component';
+
+
 
 
 const routes: Routes = [
@@ -25,15 +26,16 @@ const routes: Routes = [
       { path: 'MyProfil', component: MyProfilComponent},
       { path: 'Settings', component: SettingsComponent},
       { path: 'Disconnect', component: DisconnectComponent},
-      { path: 'details/:id', component: ScenarDetailsComponent },
+      
     ]
-  }
+  },
+
 ];
 
 @NgModule({
   declarations: [HomeComponent, MyFriendsComponent,
-    ScenarioComponent, MyProfilComponent, SettingsComponent, DisconnectComponent, LoadUsersComponent, ScenarioPipe,
-    ScenarDetailsComponent],
+    ScenarioComponent, MyProfilComponent, SettingsComponent, DisconnectComponent, LoadUsersComponent, ScenarioPipe, 
+    ],
   imports: [
     IonicModule,
     CommonModule,
