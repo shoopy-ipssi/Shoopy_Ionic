@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   constructor (private route: Router) {
   }
   test(){
-    sessionStorage.setItem('isLoggedIn', true)
+    sessionStorage.setItem('isLoggedIn', 'true')
     console.log(sessionStorage.getItem('isLoggedIn'))
     if (sessionStorage.getItem('isLoggedIn')){
       console.log("navigate")
