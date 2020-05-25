@@ -17,7 +17,8 @@ const data = { params: {userID: UID}}
 export class PlayComponent implements OnInit {
   id: any;
   scenario: any;
-
+  public data
+  
   constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobales, private router: Router) {
     }
     
@@ -34,17 +35,18 @@ export class PlayComponent implements OnInit {
           }, 100);
       });
       }
-      private text = ""
+      
     private user = []
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.http.get(`${this.gv.apiUrl}user`, data).subscribe(results => {
       this.user = results[0]; 
     });
-    this.http.get(`${this.gv.mongUrl}scenario`).subscribe((res: Response) => { this.scenario = res 
-      console.log(this.scenario)}
+    this.http.get(`${this.gv.mongUrl}scenario`).subscribe((res: Response) => { this.scenario = res
+    this.data = this.scenario[0].text
+    this.typeTextAnimated(this.data)}
     );
-    this.typeTextAnimated(this.text)
+    
   }
 
 
