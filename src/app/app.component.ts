@@ -7,10 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VariablesGlobales  } from './variables-globales/variables-globales.component';
 import { Router } from '@angular/router';
 
-sessionStorage.setItem('UID', '1')
-const UID = sessionStorage.getItem('UID')
 
-const data = { params: {userID: UID}} 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -44,7 +41,7 @@ export class AppComponent implements OnInit {
       icon: 'journal'
     },
     {
-      title: 'Déconnection',
+      title: 'Déconnexion',
       url: 'pages/Disconnect',
       icon: 'remove-circle'
     }
@@ -68,9 +65,7 @@ export class AppComponent implements OnInit {
     });
   };
   getUserMenu(){
-    return this.http.get(`${this.gv.apiUrl}user`, data).subscribe(results => {
-      this.user = results[0]; 
-    })
+    this.gv.getUser()
   };
   ngOnInit() {
       this.gv.checkUserLogged()

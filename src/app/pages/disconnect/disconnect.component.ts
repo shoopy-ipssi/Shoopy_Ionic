@@ -17,6 +17,7 @@ export class DisconnectComponent implements OnInit {
   }
   Logout() {
     sessionStorage.clear();
+    this.gv.changelsLog('false')
     this.router.navigate(['/login']);
   }
 }
