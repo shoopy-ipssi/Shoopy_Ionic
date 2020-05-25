@@ -48,16 +48,17 @@ export class PlayComponent implements OnInit {
     }
 
     loadNextStep(id_etape){
-      console.log('load')
       let etape = this.data_scenarios[id_etape]
       this.typeTextAnimated(etape.text)
       let cnt = etape.childrens.length
       let choice = ""
       etape.childrens.forEach(child => {
-        //choice = choice +`<ion-button (click)="loadNextStep('${child}')" style='width:${100/cnt}%'>${this.data_scenarios[child].action}</ion-button>`
-        choice = choice +`<ion-button onclick="loadNextStep('${child}')" style='width:${100/cnt}%; margin:0'>${this.data_scenarios[child].action}</ion-button>`
+        choice = choice +`<ion-button id="${child}" style='width:${100/cnt}%'>${this.data_scenarios[child].action}</ion-button>`
       })
       $('#block_choice').empty().html(choice)
+      etape.childrens.forEach(child =>{
+        $(`#${child}`).on('click', (event: JQuery.Event) => { this.loadNextStep(child); });
+      })
     }
     private user = []
   
@@ -68,7 +69,10 @@ export class PlayComponent implements OnInit {
     });
     this.http.get(`${this.gv.mongUrl}scenario`).subscribe((res: Response) => { this.scenario = res
     this.InitDataScenario(this.scenario)
-    this.loadNextStep(this.scenario[0]._id)}
+    this.loadNextStep(this.scenario[0]._id)
+    console.log(this.scenario[0]._id)
+  }
+
     );
     
   }
