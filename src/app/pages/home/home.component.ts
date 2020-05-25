@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     
     
     $(ele).hide().appendTo('#block_att').each(function (i) {
-        $(this).delay(100 * i).css({
+        $(this).delay(50 * i).css({
             display: 'inline',
             opacity: 0
         }).animate({
@@ -31,4 +31,3 @@ export class HomeComponent implements OnInit {
   }
 
 }
- 
