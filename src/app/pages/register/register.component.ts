@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
       const decrypted = this.RegisterData.value.password
       if (decrypted == this.log[0].password) {
         const email = sessionStorage.setItem('email', this.log[0].email);
-        const role = sessionStorage.setItem('role', this.log[0].role);
+        sessionStorage.setItem('UID', this.log[0].id)
       } else {
         alert('Mot de passe incorrect')
       }
