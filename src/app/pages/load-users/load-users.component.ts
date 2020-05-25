@@ -4,7 +4,6 @@ import { async } from '@angular/core/testing';
 import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
 
 
-const UID = sessionStorage.getItem('UID')
 @Component({
   selector: 'app-load-users',
   templateUrl: './load-users.component.html',
@@ -14,6 +13,7 @@ const UID = sessionStorage.getItem('UID')
 export class LoadUsersComponent implements OnInit {
   private users:  any[any];
   private type_button = 1;
+  private UID = sessionStorage.getItem('UID')
   constructor(private http: HttpClient, public gv: VariablesGlobales) { }
 
   loadDetailContent(){
@@ -31,26 +31,26 @@ export class LoadUsersComponent implements OnInit {
   async getPotentialFriends(){
     this.type_button = 1
     this.activebutton()
-    return this.http.get(`${this.gv.apiUrl}potential`, {params: {userID: UID}}).subscribe(results =>  {
+    return this.http.get(`${this.gv.apiUrl}potential`, {params: {userID: this.UID}}).subscribe(results =>  {
       this.users = results;
     })
   }
   async getFriends(){
     this.type_button = 2
     this.activebutton()
-    return this.http.get(`${this.gv.apiUrl}friends`, { params: {userID: UID}}).subscribe(results => {
+    return this.http.get(`${this.gv.apiUrl}friends`, { params: {userID: this.UID}}).subscribe(results => {
       this.users = results;
     })
   }
   async getReceivedInvitation(){
     this.type_button = 3
     this.activebutton()
-    return this.http.get(`${this.gv.apiUrl}recieve_invitation`, { params: {userID: UID}}).subscribe(results => {
+    return this.http.get(`${this.gv.apiUrl}recieve_invitation`, { params: {userID: this.UID}}).subscribe(results => {
       this.users = results[0];
     })
   }
   async responseInvitation(type, id){
-    const data = {typeResponse: type.trim(), idFriend: id, userID: UID}
+    const data = {typeResponse: type.trim(), idFriend: id, userID: this.UID}
     const headers = this.gv.headers
 
     if ((type === 'accept' || type ==='refuse') && parseInt(id) > 0) {
@@ -60,7 +60,7 @@ export class LoadUsersComponent implements OnInit {
     }
   }
   async sendInvitation(id){
-    const data = {userID: UID, idFriend: id}
+    const data = {userID: this.UID, idFriend: id}
     const headers = this.gv.headers
 
     if (parseInt(id) > 0){
