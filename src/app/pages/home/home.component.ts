@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log('check')
     this.gv.checkUserLogged()
     this.typeTextAnimated(test)
   }

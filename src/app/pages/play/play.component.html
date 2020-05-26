@@ -14,9 +14,9 @@
         </ion-toolbar>
     </ion-header>
     <div id="shoopy_content">
-        <img src="../assets/img/giphy.gif" *ngIf="gv.user.username == 'Whhynd' || gv.user.username == 'KaitenJr' || gv.user.username == 'Akama40K'" style="position: absolute; width: 100%; top: 0;"/>
-        <img id="shoopy_img" src="../../../assets/img/Shoopy{{gv.user.id_shoopy - 1 || 0}}.png"
-        ></div>
+        <img id="shoopy_gif" src="../assets/img/Shoopy.gif" *ngIf="(gv.user.username == 'Whhynd' || gv.user.username == 'KaitenJr' || gv.user.username == 'Akama40K') ; else shoopydefault"/>
+        <ng-template shoopydefault ><img id="shoopy_img" src="../../../assets/img/Shoopy{{gv.user.id_shoopy - 1 || 0}}.png"></ng-template>
+    </div>
         
     <div id="block_att"></div>
     <div id="block_choice"></div>
