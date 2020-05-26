@@ -57,12 +57,13 @@ export class PlayComponent implements OnInit {
       etape.childrens.forEach(child => {
         choice = choice +`<ion-button id="${child}" style='width:${100/cnt}%; margin:0%'>${this.data_scenarios[child].action}</ion-button>`
       })
+      $('#block_choice').empty().html(choice)
       console.log(choice)
-      console.log(document.getElementById('block_att'))
-      this.renderer.appendChild(document.getElementById('block_att'), choice)
-      //etape.childrens.forEach(child =>{
-        //$(`#${child}`).on('click', (event: JQuery.Event) => { this.loadNextStep(child); });
-      //})
+      console.log(document.getElementById('block_choice'))
+      //this.renderer.appendChild(document.getElementById('block_att'), choice)
+      etape.childrens.forEach(child =>{
+        $(`#${child}`).on('click', (event: JQuery.Event) => { this.loadNextStep(child); });
+      })
     }
     private user = []
   
@@ -73,7 +74,6 @@ export class PlayComponent implements OnInit {
     this.InitDataScenario(this.scenario)
     this.loadNextStep(this.scenario[0]._id)
     });
-    this.renderer.addClass(document.getElementById('block_att'), 'wild');
   }
 
 

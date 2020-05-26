@@ -16,7 +16,7 @@ export class VariablesGlobales {
   public headers = new HttpHeaders({
     'Access-Control-Allow-Origin':'*',
   });
-  public isLoggedIn = JSON.parse(localStorage.getItem('loggedIn') || 'false')
+  public isLoggedIn = JSON.parse(sessionStorage.getItem('loggedIn') || 'false')
   
   constructor(private route: Router, private http: HttpClient) {
     this.user = {
@@ -25,18 +25,19 @@ export class VariablesGlobales {
     }
   }
   checkUserLogged(){
+    console.log(this.isLoggedIn)
     if (!this.isLoggedIn && !this.route.url.startsWith("/register")){
       this.route.navigate(['/login'])
     }
   }
   setisLoggedIn(){
-    this.isLoggedIn = JSON.parse(localStorage.getItem('loggedIn') || 'false')
+    this.isLoggedIn = JSON.parse(sessionStorage.getItem('loggedIn') || 'false')
   }
   getisLoggedIn(){
     return this.isLoggedIn
   }
   changelsLog(state){
-    localStorage.setItem('loggedIn', state)
+    sessionStorage.setItem('loggedIn', state)
     this.setisLoggedIn()
   }
   getUser(){
