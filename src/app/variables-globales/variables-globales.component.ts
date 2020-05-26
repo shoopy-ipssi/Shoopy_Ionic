@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./variables-globales.component.scss'],
 })
 export class VariablesGlobales {
-  public user : any[]
+  public user : any
+  
   public apiUrl = 'https://shoopymysql.herokuapp.com/'
   public mongUrl = 'https://shoopymongo.herokuapp.com/'
   public headers = new HttpHeaders({
@@ -18,6 +19,10 @@ export class VariablesGlobales {
   public isLoggedIn = JSON.parse(localStorage.getItem('loggedIn') || 'false')
   
   constructor(private route: Router, private http: HttpClient) {
+    this.user = {
+      username: '',
+      id_shoopy: 1
+    }
   }
   checkUserLogged(){
     if (!this.isLoggedIn && !this.route.url.startsWith("/register")){
@@ -35,10 +40,11 @@ export class VariablesGlobales {
     this.setisLoggedIn()
   }
   getUser(){
-    const data = { params: {userID: sessionStorage.getItem('UID')}} 
-    return this.http.get(`${this.apiUrl}user`, data).subscribe(results => {
-      this.user = results[0]
-      console.log(this.user)
-    })
+    const data = { params: {userID: sessionStorage.getItem('UID')}}
+    if (this.getisLoggedIn()){ 
+      return this.http.get(`${this.apiUrl}user`, data).subscribe(results => {
+        this.user = results[0]
+      })
+    }
   }
 }

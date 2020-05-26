@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, Directive } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VariablesGlobales  } from '../../variables-globales/variables-globales.component';
@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery'
 
 const UID = sessionStorage.getItem('UID')
-const data = { params: {userID: UID}} 
 
 
 @Component({
@@ -14,13 +13,16 @@ const data = { params: {userID: UID}}
   templateUrl: './play.component.html',
   styleUrls: ['./play.component.scss'],
 })
+@Directive({
+  selector: 'appchoice'
+})
 export class PlayComponent implements OnInit {
   id: any;
   scenario: any;
   public data
   public data_scenarios: any
   
-  constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobales, private router: Router) {
+  constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobales, private router: Router, private renderer: Renderer2, private el:ElementRef) {
     }
     
     
@@ -55,26 +57,23 @@ export class PlayComponent implements OnInit {
       etape.childrens.forEach(child => {
         choice = choice +`<ion-button id="${child}" style='width:${100/cnt}%; margin:0%'>${this.data_scenarios[child].action}</ion-button>`
       })
-      $('#block_choice').empty().html(choice)
-      etape.childrens.forEach(child =>{
-        $(`#${child}`).on('click', (event: JQuery.Event) => { this.loadNextStep(child); });
-      })
+      console.log(choice)
+      console.log(document.getElementById('block_att'))
+      this.renderer.appendChild(document.getElementById('block_att'), choice)
+      //etape.childrens.forEach(child =>{
+        //$(`#${child}`).on('click', (event: JQuery.Event) => { this.loadNextStep(child); });
+      //})
     }
     private user = []
   
     ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.http.get(`${this.gv.apiUrl}user`, data).subscribe(results => {
-      this.user = results[0]; 
-    });
+    this.gv.getUser()
     this.http.get(`${this.gv.mongUrl}scenario`).subscribe((res: Response) => { this.scenario = res
     this.InitDataScenario(this.scenario)
     this.loadNextStep(this.scenario[0]._id)
-    console.log(this.scenario[0]._id)
-  }
-
-    );
-    
+    });
+    this.renderer.addClass(document.getElementById('block_att'), 'wild');
   }
 
 

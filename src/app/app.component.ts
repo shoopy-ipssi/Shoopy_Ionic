@@ -68,8 +68,9 @@ export class AppComponent implements OnInit {
     this.gv.getUser()
   };
   ngOnInit() {
-      this.gv.checkUserLogged()
       this.getUserMenu()
+      this.gv.checkUserLogged()
+      
       const path = window.location.pathname.split('pages/')[1];
       if (path !== undefined) {
         this.selectedIndex = this.appPages.findIndex(page => page.techTitle === path);
