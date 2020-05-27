@@ -26,6 +26,11 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
+      title: 'Scénario',
+      url: 'pages/Scenario',
+      icon: 'journal'
+    },
+    {
       title: 'Mon Profil',
       url: 'pages/MyProfil',
       icon: 'happy'
@@ -34,11 +39,6 @@ export class AppComponent implements OnInit {
       title: 'Mes Amis',
       url: 'pages/MyFriends',
       icon: 'person'
-    },
-    {
-      title: 'Scénario',
-      url: 'pages/Scenario',
-      icon: 'journal'
     },
     {
       title: 'Déconnexion',
