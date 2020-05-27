@@ -55,7 +55,7 @@ export class PlayComponent implements OnInit {
       let cnt = etape.childrens.length
       let choice = ""
       etape.childrens.forEach(child => {
-        choice = choice +`<ion-button id="${child}" style='width:${100/cnt}%; margin:0%'>${this.data_scenarios[child].action}</ion-button>`
+        choice = choice +`<ion-button id="${child}" style='width:${100/cnt}%; margin:0%'>${this.data_scenarios[child].text}</ion-button>`
       })
       $('#block_choice').empty().html(choice)
       console.log(choice)

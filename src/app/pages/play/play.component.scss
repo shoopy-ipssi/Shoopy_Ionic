@@ -1,17 +1,29 @@
-#shoopy_img {
-
+#shoopy_gif {
+    height: 100%;
 }
+
+#shoopy_img {
+    height: 100%;
+}
+
+#shoopy_content {
+    height: 50%;
+    text-align: center;
+}
+
 #block_att {
     width: 70%;
     padding: 10px;
     margin: auto;
     text-align: center;
 }
+
 #block_choice {
     position: absolute;
     width: 100%;
     bottom: 0;
 }
+
 .wild {
     color: red !important;
     background: white !important;
