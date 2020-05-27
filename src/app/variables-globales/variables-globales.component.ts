@@ -25,7 +25,6 @@ export class VariablesGlobales {
     }
   }
   checkUserLogged(){
-    console.log(this.isLoggedIn)
     if (!this.isLoggedIn && !this.route.url.startsWith("/register")){
       this.route.navigate(['/login'])
     }
