@@ -13,21 +13,62 @@
             <ion-title size="large">Scénarios</ion-title>
         </ion-toolbar>
     </ion-header>
-
-    <table>
-        <tbody *ngFor="let scenario of scenarios | Profilter:searchTitle:searchTag">
-            <tr>
-                <td>
-                    <ion-card>
-                        <ion-card-header>
-                            <ion-card-title>{{ scenario.name }}</ion-card-title>
-                            <ion-card-subtitle>{{ scenario.resume }}</ion-card-subtitle>
-                            <ion-card-subtitle>{{ scenario.tags }}</ion-card-subtitle>
-                            <ion-button [routerLink]="['/play', scenario.id]">Jouer</ion-button>
-                        </ion-card-header>
-                    </ion-card>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-lg-3 offset-lg-1 offset-sm-0">
+            <h2 class="text-center">En route pour l'aventure</h2>
+            <table >
+                <tbody *ngFor="let scenario of scenarios | Profilter:searchTitle:searchTag">
+                    <tr>
+                        <td>
+                            <ion-card>
+                                <ion-card-header>
+                                    <ion-card-title>{{ scenario.name }}</ion-card-title>
+                                    <ion-card-subtitle>{{ scenario.resume }}</ion-card-subtitle>
+                                    <ion-card-subtitle>{{ scenario.tags }}</ion-card-subtitle>
+                                    <ion-button [routerLink]="['/play', scenario.id]">Jouer</ion-button>
+                                </ion-card-header>
+                            </ion-card>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-3 offset-lg-1 offset-sm-0" *ngIf="unfinishedDetail.length > 0">
+            <h2 class="text-center">Mes scénarios en cours</h2>
+            <table>
+                <tbody *ngFor="let scenario of unfinishedDetail">
+                    <tr>
+                        <td>
+                            <ion-card>
+                                <ion-card-header>
+                                    <ion-card-title>{{ scenario.item.name }}</ion-card-title>
+                                    <ion-card-subtitle>{{ scenario.item.resume }}</ion-card-subtitle>
+                                    <ion-card-subtitle>{{ scenario.item.tags }}</ion-card-subtitle>
+                                    <ion-button [routerLink]="['/play', scenario.item.id, {id_step:scenario.id_step, idSave: scenario.id_save}]">Reprendre ma partie</ion-button>
+                                </ion-card-header>
+                            </ion-card>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-3 offset-lg-1 offset-sm-0" *ngIf="finishedDetail.length > 0">
+            <h2 class="text-center">Mes scénarios terminés</h2>
+            <table>
+                <tbody *ngFor="let scenario of finishedDetail">
+                    <tr>
+                        <td>
+                            <ion-card>
+                                <ion-card-header>
+                                    <ion-card-title>{{ scenario.item.name }}</ion-card-title>
+                                    <ion-card-subtitle>{{ scenario.item.resume }}</ion-card-subtitle>
+                                    <ion-card-subtitle>{{ scenario.item.tags }}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-card>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </ion-content>

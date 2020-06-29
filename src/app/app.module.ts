@@ -17,12 +17,14 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PlayComponent } from './pages/play/play.component';
+import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten-password.component';
+import { NewPasswordComponent } from './pages/new-password/new-password.component';
 
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent, PlayComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent, PlayComponent, ForgottenPasswordComponent, NewPasswordComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

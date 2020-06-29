@@ -14,6 +14,7 @@ export class LoadUsersComponent implements OnInit {
   private users:  any[any];
   private type_button = 1;
   private UID = sessionStorage.getItem('UID')
+  public cnt = 0
   constructor(private http: HttpClient, public gv: VariablesGlobales) { }
 
   loadDetailContent(){
@@ -49,12 +50,18 @@ export class LoadUsersComponent implements OnInit {
       this.users = results[0];
     })
   }
+  async getCountInvitation(){
+    return this.http.get(`${this.gv.apiUrl}recieve_invitation`, { params: {userID: this.UID}}).subscribe(results => {
+      this.cnt = results[0].length;
+    })
+  }
   async responseInvitation(type, id){
     const data = {typeResponse: type.trim(), idFriend: id, userID: this.UID}
     const headers = this.gv.headers
 
     if ((type === 'accept' || type ==='refuse') && parseInt(id) > 0) {
       return this.http.post(`${this.gv.apiUrl}recieve_invitation`, data, {headers: headers}).subscribe(results => {
+        this.getCountInvitation()
         this.loadDetailContent()
       })
     }
@@ -65,6 +72,7 @@ export class LoadUsersComponent implements OnInit {
 
     if (parseInt(id) > 0){
       return this.http.post(`${this.gv.apiUrl}send_invitation`, data, {headers: headers}).subscribe(results => {
+        this.getCountInvitation()
         this.loadDetailContent();
       })
     }
@@ -72,6 +80,7 @@ export class LoadUsersComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.getCountInvitation()
     this.getPotentialFriends();
   }
 

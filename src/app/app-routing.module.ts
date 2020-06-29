@@ -5,6 +5,8 @@ import { PagesModule } from './pages/pages.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PlayComponent } from './pages/play/play.component';
+import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten-password.component';
+import { NewPasswordComponent } from './pages/new-password/new-password.component';
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'forgotten-password',
+    component: ForgottenPasswordComponent
+  },
+  {
+    path: 'newPassword/:u',
+    component: NewPasswordComponent
   },
   {
     path: 'play/:id',

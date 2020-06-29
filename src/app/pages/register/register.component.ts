@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
 
   async Register() {
     const datas = this.RegisterData.value;
-    datas.password = this.EncrDecr.set('@$^FNARD@75017', datas.password)
+    datas.password = this.EncrDecr.set(this.gv.cryptVal, datas.password)
     this.http.post(`${this.gv.apiUrl}createuser`, datas, { headers: this.gv.headers }).
       subscribe((res: Response) => {
         this.log = res;

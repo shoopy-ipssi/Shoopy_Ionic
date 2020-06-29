@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       if (decrypted == this.log[0].password) {
         const email = sessionStorage.setItem('email', this.log[0].email);
         sessionStorage.setItem('UID', this.log[0].id)
+        console.log(sessionStorage.getItem('UID'))
       } else {
         alert('Mot de passe incorrect')
       }
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit {
 
   async Signin() {
     const datas = this.LoginData.value;
-    datas.password = this.EncrDecr.set('@$^FNARD@75017', datas.password)
+    datas.password = this.EncrDecr.set(this.gv.cryptVal, datas.password)
     this.http.post(`${this.gv.apiUrl}login`, datas, { headers: this.gv.headers }).
       subscribe((res: Response) => {
         this.log = res;

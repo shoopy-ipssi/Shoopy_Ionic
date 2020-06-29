@@ -21,3 +21,15 @@ ion-button{
     color: #478AFF !important;
     background-color: white !important;
 }
+#flex {
+    justify-content:center
+}
+#count_inv {
+    position: relative;
+    top: -20%;
+    /* right: -30%; */
+    border: 1px black solid;
+    border-radius: 100%;
+    padding: 3px;
+    background: darkred;
+}

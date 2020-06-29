@@ -12,7 +12,9 @@ export class VariablesGlobales {
   public user : any
   
   public apiUrl = 'https://shoopymysql.herokuapp.com/'
+  public FoUrl = 'http://localhost:8100/'
   public mongUrl = 'https://shoopymongo.herokuapp.com/'
+  public cryptVal = '@$^FNARD@75017'
   public headers = new HttpHeaders({
     'Access-Control-Allow-Origin':'*',
   });
@@ -32,7 +34,7 @@ export class VariablesGlobales {
   setisLoggedIn(){
     this.isLoggedIn = JSON.parse(sessionStorage.getItem('loggedIn') || 'false')
   }
-  getisLoggedIn(){
+  getisLoggedIn(){ 
     return this.isLoggedIn
   }
   changelsLog(state){
