@@ -19,12 +19,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PlayComponent } from './pages/play/play.component';
 import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten-password.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
+import { ValidateAccountComponent } from './pages/validate-account/validate-account.component';
 
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent, PlayComponent, ForgottenPasswordComponent, NewPasswordComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent, PlayComponent, ForgottenPasswordComponent, NewPasswordComponent, ValidateAccountComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

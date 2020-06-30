@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { PlayComponent } from './pages/play/play.component';
 import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten-password.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
+import { ValidateAccountComponent } from './pages/validate-account/validate-account.component';
 const routes: Routes = [
   {
     path: '',
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'newPassword/:u',
     component: NewPasswordComponent
+  },
+  {
+    path: 'validateAccount/:u',
+    component: ValidateAccountComponent
   },
   {
     path: 'play/:id',

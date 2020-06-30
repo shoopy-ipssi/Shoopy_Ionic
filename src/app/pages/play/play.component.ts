@@ -78,8 +78,9 @@ export class PlayComponent implements OnInit {
     createSave(){
       const data = {id_scenario:this.data_scenarios[this.id_etape].scenario_id ,id_step:this.id_etape, id_user:sessionStorage.getItem('UID')}
       this.http.post(`${this.gv.apiUrl}save`, data, {headers: this.gv.headers}).subscribe((res: Response) => { 
-        this.idSave = res.insertId
-        if (parseInt("0"+this.idSave)> 0){
+        this.idSave = res
+        console.log(this.idSave.insertId)
+        if (parseInt("0"+this.idSave.insertId)> 0){
           this.saveExist = true
         }
       })

@@ -15,8 +15,9 @@ export class RegisterComponent implements OnInit {
   public RegisterData: FormGroup;
   public session: Response;
   public log: Response;
+  public sendMail: boolean
   constructor (public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobales) {
-    
+    this.sendMail = false
   }
   ngOnInit() {
     this.RegisterData = this.fb.group({
@@ -47,7 +48,18 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['']);
     }
   }
-
+  sendMailRegister(){
+    const dataForm = this.RegisterData.value
+    const encrypt_user = this.EncrDecr.set('123456$#@$^@1ERF', this.log[0].id)
+    const linkEncrypt = `${this.gv.FoUrl}validateAccount/${encrypt_user.split('/').join('__').split('=').join('-_-')}`
+    const data = {EmailUser : dataForm.email, NameUser: dataForm.username, linkEncrypt: linkEncrypt}
+    this.http.post(`${this.gv.apiUrl}createaccount`, data, {headers: this.gv.headers}).subscribe(result => {
+      console.log(result)
+      if (result){
+        this.sendMail = true
+      }
+    })
+  }
   async Register() {
     const datas = this.RegisterData.value;
     datas.password = this.EncrDecr.set(this.gv.cryptVal, datas.password)
@@ -56,7 +68,8 @@ export class RegisterComponent implements OnInit {
         this.log = res;
         console.log(res)
         if (this.log[0] !== undefined) {
-          this.Signin()
+          this.sendMailRegister()
+          //this.Signin()
         } else {
           this.router.navigate(['']);
         }
