@@ -7,11 +7,6 @@
     </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Jouer</ion-title>
-        </ion-toolbar>
-    </ion-header>
     <div id="shoopy_content" class="main_bg_img">
         <img id="shoopy_gif" src="../assets/img/Shoopy.gif" *ngIf="(gv.user.username == 'Whhynd' || gv.user.username == 'KaitenJr' || gv.user.username == 'Akama40K') ; else shoopydefault" />
         <ng-template #shoopydefault><img id="shoopy_img" src="../../../assets/img/Shoopy{{gv.user.id_shoopy - 1 || 0}}.png"></ng-template>
