@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EncrDecrService } from 'src/app/services/crypto.service';
 import { HttpClient } from '@angular/common/http';
-import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,8 @@ export class NewPasswordComponent implements OnInit {
   public username
   public NpData: FormGroup
   public checkPasswordState=true
-  constructor(private route: Router, private router: ActivatedRoute, public EncrDecr: EncrDecrService, public http: HttpClient, public gv: VariablesGlobales, public fb: FormBuilder) { }
+  constructor(private route: Router, private router: ActivatedRoute, public EncrDecr: EncrDecrService, 
+    public http: HttpClient, public gv: VariablesGlobalesComponent, public fb: FormBuilder) { }
 
   checkUser(){
     const data = {params: {userID: this.decryptU, username: "123456$#@$^@1ERF"}}

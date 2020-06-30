@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { EncrDecrService } from '../../services/crypto.service';
-import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   public session: Response;
   public log: Response;
 
-  constructor(public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobales) {
+  constructor(public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobalesComponent) {
 
   }
 

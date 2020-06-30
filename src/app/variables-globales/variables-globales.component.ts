@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './variables-globales.component.html',
   styleUrls: ['./variables-globales.component.scss'],
 })
-export class VariablesGlobales {
+export class VariablesGlobalesComponent {
   public user : any
   
   public apiUrl = 'https://shoopymysql.herokuapp.com/'

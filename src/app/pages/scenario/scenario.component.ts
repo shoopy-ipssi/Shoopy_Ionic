@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class ScenarioComponent implements OnInit {
   //Scenarios terminés
   public finishedDetail = [];
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private gv: VariablesGlobales) {    
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private gv: VariablesGlobalesComponent) {    
     this.config = {
       currentPage: 1,
       itemsPerPage: 25,

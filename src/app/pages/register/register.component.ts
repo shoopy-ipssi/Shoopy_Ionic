@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EncrDecrService } from 'src/app/services/crypto.service';
-import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 
 
 @Component({

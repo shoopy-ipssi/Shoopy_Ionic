@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 
 @Component({
   selector: 'app-disconnect',
@@ -9,7 +9,7 @@ import { VariablesGlobales } from 'src/app/variables-globales/variables-globales
 })
 export class DisconnectComponent implements OnInit {
 
-  constructor(public router: Router, private gv: VariablesGlobales) { }
+  constructor(public router: Router, private gv: VariablesGlobalesComponent) { }
 
   ngOnInit() {
     this.gv.checkUserLogged()

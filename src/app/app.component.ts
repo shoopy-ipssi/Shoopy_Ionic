@@ -4,7 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { VariablesGlobales  } from './variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from './variables-globales/variables-globales.component';
 import { Router } from '@angular/router';
 
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  providers: [VariablesGlobales ]
+  providers: [VariablesGlobalesComponent ]
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
@@ -41,6 +41,11 @@ export class AppComponent implements OnInit {
       icon: 'person'
     },
     {
+      title: 'Paramètres',
+      url: 'pages/Settings',
+      icon: 'flower'
+    },
+    {
       title: 'Déconnexion',
       url: 'pages/Disconnect',
       icon: 'remove-circle'
@@ -52,7 +57,7 @@ export class AppComponent implements OnInit {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private http: HttpClient,
-    public gv: VariablesGlobales,
+    public gv: VariablesGlobalesComponent,
     private router: Router
   ) {
     this.initializeApp();
@@ -74,6 +79,7 @@ export class AppComponent implements OnInit {
       const path = window.location.pathname.split('pages/')[1];
       if (path !== undefined) {
         this.selectedIndex = this.appPages.findIndex(page => page.techTitle === path);
-      }  
+      }
+      localStorage.setItem('Shoopy', '1');  
   }
 }
