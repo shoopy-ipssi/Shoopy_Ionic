@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   public session: Response;
   public log: Response;
   public sendMail: boolean
-  constructor (public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobales) {
+  constructor (public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobalesComponent) {
     this.sendMail = false
   }
   ngOnInit() {
