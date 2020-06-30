@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EncrDecrService } from 'src/app/services/crypto.service';
+import { EncrDecrService } from '../../services/crypto.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import {  VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
+import {  VariablesGlobalesComponent } from '../../variables-globales/variables-globales.component';
 
 @Component({
   selector: 'app-validate-account',
