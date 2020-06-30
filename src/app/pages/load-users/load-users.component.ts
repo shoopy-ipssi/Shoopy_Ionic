@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { async } from '@angular/core/testing';
-import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 
 
 @Component({
   selector: 'app-load-users',
   templateUrl: './load-users.component.html',
   styleUrls: ['./load-users.component.scss'],
-  providers: [VariablesGlobales]
+  providers: [VariablesGlobalesComponent]
 })
 export class LoadUsersComponent implements OnInit {
   private users:  any[any];
   private type_button = 1;
   private UID = sessionStorage.getItem('UID')
   public cnt = 0
-  constructor(private http: HttpClient, public gv: VariablesGlobales) { }
+  constructor(private http: HttpClient, public gv: VariablesGlobalesComponent) { }
 
   loadDetailContent(){
     if (this.type_button == 1) this.getPotentialFriends();

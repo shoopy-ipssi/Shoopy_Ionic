@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer2, ElementRef, Directive } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { VariablesGlobales  } from '../../variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent  } from '../../variables-globales/variables-globales.component';
 import { Router } from '@angular/router';
 import * as $ from 'jquery'
 
@@ -25,7 +25,7 @@ export class PlayComponent implements OnInit {
   public saveExist = false
   public idSave: any
   public isFinished = false
-  constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobales, private router: Router, private renderer: Renderer2, private el:ElementRef) {
+  constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobalesComponent, private router: Router, private renderer: Renderer2, private el:ElementRef) {
     }
     
     

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EncrDecrService } from 'src/app/services/crypto.service';
-import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   public RegisterData: FormGroup;
   public session: Response;
   public log: Response;
-  constructor (public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobales) {
+  constructor (public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobalesComponent) {
     
   }
   ngOnInit() {

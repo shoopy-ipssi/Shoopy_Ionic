@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { EncrDecrService } from 'src/app/services/crypto.service';
-import { VariablesGlobales } from 'src/app/variables-globales/variables-globales.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 
 @Component({
   selector: 'app-forgotten-password',
@@ -15,7 +15,7 @@ export class ForgottenPasswordComponent implements OnInit {
   public FpData: FormGroup;
   public correctMail: boolean
   public sendmail: boolean
-  constructor(public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobales) {
+  constructor(public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobalesComponent) {
     this.correctMail = true
     this.sendmail = false
   }
