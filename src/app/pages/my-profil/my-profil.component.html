@@ -8,53 +8,50 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Mon Profil</ion-title>
-        </ion-toolbar>
-    </ion-header>
-    <form (ngSubmit)="UpdateProfil()" [formGroup]="ProfilData" *ngFor="let use of user">
-        <ion-list lines="full" class="ion-no-margin ion-no-padding">
-            <ion-item>
-                <ion-label position="stacked">Email
-                </ion-label>
-                <ion-input disabled type="email" name="email">{{use.email}}</ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="stacked">Firstname
-                </ion-label>
-                <ion-input disabled type="text" name="firstname">{{use.firstname}}</ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="stacked">Lastname
-                </ion-label>
-                <ion-input disabled type="text" name="lastname">{{use.lastname}}</ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="stacked">Username
-                    <ion-text color="danger">*</ion-text>
-                </ion-label>
-                <ion-input required type="text" placeholder="{{use.username}}" formControlName="username" name="username"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label position="stacked">Shoopy
-                    <ion-text color="danger">*</ion-text>
-                </ion-label>
-                <ion-select required type="number" formControlName="id_shoopy" name="id_shoopy">
-                    <ion-select-option value="1">Shoopy</ion-select-option>
-                    <ion-select-option value="2">Shoopy Professeur</ion-select-option>
-                    <ion-select-option value="3">Shoopy Détective</ion-select-option>
-                    <ion-select-option value="4">Shoopy Dora</ion-select-option>
-                    <ion-select-option value="5">Shoopy DOOM</ion-select-option>
-                    <ion-select-option value="5">Shoopy Spartiate</ion-select-option>
-                    <ion-select-option value="5">Shoopy Magicien</ion-select-option>
-                    <ion-select-option value="5">Shoopy Astronaute</ion-select-option>
-                    <ion-select-option value="5">Shoopy Shérif</ion-select-option>
-                </ion-select>
-            </ion-item>
-            <div class="ion-padding">
-                <ion-button expand="block" type="submit" class="ion-no-margin" color="primary" type="submit">Modifier</ion-button>
-            </div>
-        </ion-list>
-    </form>
+    <div class="main_bg_img">
+        <form (ngSubmit)="UpdateProfil()" [formGroup]="ProfilData" *ngFor="let use of user">
+            <ion-list lines="full" class="ion-no-margin ion-no-padding">
+                <ion-item>
+                    <ion-label position="stacked">Email
+                    </ion-label>
+                    <ion-input disabled type="email" name="email">{{use.email}}</ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">Firstname
+                    </ion-label>
+                    <ion-input disabled type="text" name="firstname">{{use.firstname}}</ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">Lastname
+                    </ion-label>
+                    <ion-input disabled type="text" name="lastname">{{use.lastname}}</ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">Username
+                        <ion-text color="danger">*</ion-text>
+                    </ion-label>
+                    <ion-input required type="text" placeholder="{{use.username}}" formControlName="username" name="username"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">Shoopy
+                        <ion-text color="danger">*</ion-text>
+                    </ion-label>
+                    <ion-select required type="number" formControlName="id_shoopy" name="id_shoopy">
+                        <ion-select-option value="1">Shoopy</ion-select-option>
+                        <ion-select-option value="2">Shoopy Professeur</ion-select-option>
+                        <ion-select-option value="3">Shoopy Détective</ion-select-option>
+                        <ion-select-option value="4">Shoopy Dora</ion-select-option>
+                        <ion-select-option value="5">Shoopy DOOM</ion-select-option>
+                        <ion-select-option value="5">Shoopy Spartiate</ion-select-option>
+                        <ion-select-option value="5">Shoopy Magicien</ion-select-option>
+                        <ion-select-option value="5">Shoopy Astronaute</ion-select-option>
+                        <ion-select-option value="5">Shoopy Shérif</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <div class="ion-padding">
+                    <ion-button expand="block" type="submit" class="ion-no-margin" color="primary" type="submit">Modifier</ion-button>
+                </div>
+            </ion-list>
+        </form>
+    </div>
 </ion-content>
