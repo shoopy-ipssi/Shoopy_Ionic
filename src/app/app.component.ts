@@ -72,6 +72,10 @@ export class AppComponent implements OnInit {
   getUserMenu(){
     this.gv.getUser()
   };
+  getUrl()
+  {
+    return `url('${this.gv.FoUrl}/assets/img/Lawachara_Forest.jpg')`;
+  }
   ngOnInit() {
       this.getUserMenu()
       if (window.location.pathname.split('/')[1] != 'newPassword') { this.gv.checkUserLogged() }

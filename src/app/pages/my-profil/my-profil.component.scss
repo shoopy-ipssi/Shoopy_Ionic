@@ -2,3 +2,9 @@ ion-title,
 ion-menu-button {
     --color: var(--ion-color-primary);
 }
+.main_bg_img{
+    background: url('../../../assets/img/Lawachara_Forest.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100%;
+}
