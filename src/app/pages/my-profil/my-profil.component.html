@@ -13,4 +13,47 @@
             <ion-title size="large">Mon Profil</ion-title>
         </ion-toolbar>
     </ion-header>
+    <form (ngSubmit)="UpdateProfil()" [formGroup]="ProfilData">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+            <ion-item>
+                <ion-label position="stacked">Email
+                </ion-label>
+                <ion-input disabled type="email" formControlName="email" name="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">Password
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="password" formControlName="password" name="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Firstname
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" formControlName="firstname" name="firstname"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Lastname
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" formControlName="lastname" name="lastname"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Username
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" formControlName="username" name="username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Shoopy
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" formControlName="username" name="username"></ion-input>
+            </ion-item>
+            <div class="ion-padding">
+                <ion-button expand="block" type="submit" class="ion-no-margin" color="primary" type="submit">Modifier</ion-button>
+            </div>
+        </ion-list>
+    </form>
 </ion-content>

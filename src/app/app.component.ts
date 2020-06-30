@@ -80,6 +80,5 @@ export class AppComponent implements OnInit {
       if (path !== undefined) {
         this.selectedIndex = this.appPages.findIndex(page => page.techTitle === path);
       }
-      localStorage.setItem('Shoopy', '1');  
   }
 }
