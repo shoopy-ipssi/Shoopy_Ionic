@@ -78,7 +78,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
       this.getUserMenu()
-      if (window.location.pathname.split('/')[1] != 'newPassword') { this.gv.checkUserLogged() }
+      if (window.location.pathname.split('/')[1] != 'newPassword' && window.location.pathname.split('/')[1] != 'validateAccount' ) { this.gv.checkUserLogged() }
       
       const path = window.location.pathname.split('pages/')[1];
       if (path !== undefined) {

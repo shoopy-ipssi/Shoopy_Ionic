@@ -14,5 +14,5 @@
       </ion-toolbar>
   </ion-header> 
   <ion-item *ngIf="checkActivation">Votre compte a été activé avec succès</ion-item>
-  <ion-button [routerLink]='login'>Se connecter</ion-button>
+  <ion-button *ngIf="checkActivation" (click)='route.navigate(["login"])'>Se connecter</ion-button>
 </ion-content>
