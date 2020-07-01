@@ -45,7 +45,7 @@ export class MyProfilComponent implements OnInit {
       subscribe((res: Response) => {
         this.log = res;
         console.log(res)
-        this.router.navigate(['/']);
+        this.router.navigate(['home']);
       });
   }
 }
