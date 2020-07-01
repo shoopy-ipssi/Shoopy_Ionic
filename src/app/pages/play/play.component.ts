@@ -18,6 +18,7 @@ import * as $ from 'jquery'
 export class PlayComponent implements OnInit {
   public id: any;
   public id_step= ''
+  public loading: boolean
   public scenario: any;
   public data
   public data_scenarios: any
@@ -27,7 +28,8 @@ export class PlayComponent implements OnInit {
   public isFinished = false
   public choice: any
   constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobalesComponent, private router: Router, private renderer: Renderer2, private el:ElementRef) {
-    }
+    this.loading = true  
+  }
     
     
     typeTextAnimated(sentence) {

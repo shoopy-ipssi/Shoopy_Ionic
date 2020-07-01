@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class VariablesGlobalesComponent {
   public user : any
   
-  public apiUrl = 'http://localhost:3000/'//'https://shoopymysql.herokuapp.com/'
+  public apiUrl = 'https://shoopymysql.herokuapp.com/'
   public FoUrl = 'http://localhost:8100/'
   public mongUrl = 'https://shoopymongo.herokuapp.com/'
   public cryptVal = '@$^FNARD@75017'

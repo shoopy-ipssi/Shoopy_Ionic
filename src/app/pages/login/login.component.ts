@@ -34,15 +34,16 @@ export class LoginComponent implements OnInit {
       if (decrypted == this.log[0].password) {
         const email = sessionStorage.setItem('email', this.log[0].email);
         if (this.log[0].isActive){
-          sessionStorage.setItem('UID', this.log[0].id)
-          console.log(sessionStorage.getItem('UID'))
+          
         } else {
           alert('Votre compte n\'est pas actif. Veuillez vérifier votre boîte mail.')
         }
+        sessionStorage.setItem('UID', this.log[0].id)
+        console.log(sessionStorage.getItem('UID'))
       } else {
         alert('Mot de passe incorrect')
-      }
-    } else {
+      } 
+    } else { 
       alert('Email incorrect')
     }
     this.gv.changelsLog('true')

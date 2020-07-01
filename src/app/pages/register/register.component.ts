@@ -14,7 +14,7 @@ import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables
 export class RegisterComponent implements OnInit {
   public RegisterData: FormGroup;
   public session: Response;
-  public log: Response;
+  public log: any;
   public sendMail: boolean
   constructor (public http: HttpClient, public fb: FormBuilder, public router: Router, public EncrDecr: EncrDecrService, public gv: VariablesGlobalesComponent) {
     this.sendMail = false
