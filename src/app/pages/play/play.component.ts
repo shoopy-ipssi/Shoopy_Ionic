@@ -28,7 +28,7 @@ export class PlayComponent implements OnInit {
   public isFinished = false
   public choice: any
   constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobalesComponent, private router: Router, private renderer: Renderer2, private el:ElementRef) {
-    this.loading = true  
+    this.loading = false  
   }
     
     
@@ -106,7 +106,9 @@ export class PlayComponent implements OnInit {
         this.saveExist = true
       }
       this.gv.getUser()
-      this.http.get(`${this.gv.mongUrl}scenario`, {params: {id: this.id}}).subscribe((res: Response) => { this.scenario = res
+      this.loading = true
+      this.http.get(`${this.gv.mongUrl}scenario`, {params: {id: this.id}}).subscribe((res: Response) => { 
+        this.scenario = res
       this.InitDataScenario(this.scenario)
       if (this.id_step != '') { this.loadNextStep(this.id_step)}
       else { this.loadNextStep(this.scenario[0]._id)}

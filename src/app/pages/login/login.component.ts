@@ -33,24 +33,25 @@ export class LoginComponent implements OnInit {
       const decrypted = this.LoginData.value.password
       if (decrypted == this.log[0].password) {
         const email = sessionStorage.setItem('email', this.log[0].email);
-        if (this.log[0].isActive){
-          
+        if (this.log[0].isActive.data[0] == 1){
+          sessionStorage.setItem('UID', this.log[0].id)
+          this.gv.changelsLog('true')
+          if (this.gv.getisLoggedIn()){
+            this.gv.getUser()
+            this.router.navigate(['']);
+          }
         } else {
+          console.log(this.log[0].isActive.data[0])
           alert('Votre compte n\'est pas actif. Veuillez vérifier votre boîte mail.')
         }
-        sessionStorage.setItem('UID', this.log[0].id)
-        console.log(sessionStorage.getItem('UID'))
+
       } else {
         alert('Mot de passe incorrect')
       } 
     } else { 
       alert('Email incorrect')
     }
-    this.gv.changelsLog('true')
-    if (this.gv.getisLoggedIn()){
-      this.gv.getUser()
-      this.router.navigate(['']);
-    }
+
   }
 
   async Signin() {
