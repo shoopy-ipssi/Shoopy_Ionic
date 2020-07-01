@@ -30,8 +30,7 @@ export class MyProfilComponent implements OnInit {
         this.user = results;
         console.log(this.user)
         this.ProfilData = this.fb.group({
-          username: [this.user.username, Validators.required],
-          id_shoopy: [this.user.id_shoopy, Validators.required],
+          id_shoopy: [1, Validators.required],
         });;
       })
 
@@ -45,7 +44,7 @@ export class MyProfilComponent implements OnInit {
       subscribe((res: Response) => {
         this.log = res;
         console.log(res)
-        this.router.navigate(['/']);
+        location.reload();
       });
   }
 }
