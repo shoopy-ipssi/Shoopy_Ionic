@@ -10,9 +10,9 @@
 <ion-content [fullscreen]="true">
     <div class="row main_bg_img">
         <div class="col-lg-3 offset-lg-1 offset-sm-0">
-            <h2 class="text-center">En route pour l'aventure</h2>
+            <h2 class="text-center block_att">En route pour l'aventure</h2>
             <table >
-                <tbody *ngFor="let scenario of scenarios | Profilter:searchTitle:searchTag">
+                <tbody *ngFor="let scenario of scenarios">
                     <tr>
                         <td>
                             <ion-card>
@@ -29,7 +29,7 @@
             </table>
         </div>
         <div class="col-lg-3 offset-lg-1 offset-sm-0" *ngIf="unfinishedDetail.length > 0">
-            <h2 class="text-center">Mes scénarios en cours</h2>
+            <h2 class="text-center block_att">Mes scénarios en cours</h2>
             <table>
                 <tbody *ngFor="let scenario of unfinishedDetail">
                     <tr>
@@ -48,7 +48,7 @@
             </table>
         </div>
         <div class="col-lg-3 offset-lg-1 offset-sm-0" *ngIf="finishedDetail.length > 0">
-            <h2 class="text-center">Mes scénarios terminés</h2>
+            <h2 class="text-center block_att">Mes scénarios terminés</h2>
             <table>
                 <tbody *ngFor="let scenario of finishedDetail">
                     <tr>

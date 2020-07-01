@@ -70,10 +70,6 @@ export class ScenarioComponent implements OnInit {
     });
   }
   ngOnInit() {
-     
+    this.getScenarios();
   }
-  ngAfterViewInit(){
-    this.getScenarios();   
-  }
-
 }

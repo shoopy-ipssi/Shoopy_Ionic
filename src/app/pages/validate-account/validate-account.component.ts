@@ -23,8 +23,15 @@ export class ValidateAccountComponent implements OnInit {
     })
   }
   ngOnInit() {
-    this.decryptU = this.EncrDecr.get('123456$#@$^@1ERF', this.router.snapshot.paramMap.get('u').split('-_-').join('=').split('__').join('/'))
+    const u = this.router.snapshot.paramMap.get('u')
+    if (u != undefined){
+    this.decryptU = this.EncrDecr.get('123456$#@$^@1ERF', u.split('-_-').join('=').split('__').join('/'))
     this.validateAccount()
+    }
+    else {
+      alert('Lien d\'activation incorrect')
+      this.route.navigate['login']
+    }
   }
 
 }

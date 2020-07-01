@@ -6,11 +6,14 @@ ion-button{
     margin:0px
 }
 #list_friend div {
-    padding:5px;
-    margin: 5px 0;
-    border: 1px grey solid;
-    background-color: grey;
-    display: flex;
+    padding: 10px;
+    margin: auto;
+    margin-top:10px;
+    text-align: center;
+    border:  2px #f1dca7 solid;
+    border-radius: 35px;
+    background :url('../../../assets/img/woodbg.jpg');
+    font-weight: bold;
 
 }
 #list_friend div p {

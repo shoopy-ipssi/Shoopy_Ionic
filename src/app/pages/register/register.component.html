@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <form (ngSubmit)="Register()" [formGroup]="RegisterData">
+    <form (ngSubmit)="Register()" [formGroup]="RegisterData" *ngIf="!sendMail; else sendInf">
         <ion-list lines="full" class="ion-no-margin ion-no-padding">
             <ion-item>
                 <ion-label position="stacked">Email
@@ -49,5 +49,5 @@
             </div>
         </ion-list>
     </form>
-
+    <ng-template #sendInf>Un mail de validation vous a été envoyé sur votre boîte mail.</ng-template>
 </ion-content>

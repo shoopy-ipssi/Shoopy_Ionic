@@ -9,9 +9,9 @@
         <img class="col-lg-1 col-4" src='../../../assets/img/Shoopy{{user.id_shoopy - 1}}.png'/>
         <p class="col-lg-9 col-6">{{user.username}}</p>
         <div class="col-lg-2 col-2" id="block_button">
-          <div *ngIf="type_button == 1" (click)="sendInvitation(user.id)"><ion-icon name="people-outline"></ion-icon></div>
-          <div *ngIf="type_button == 3" (click)="responseInvitation('accept', user.id)"><ion-icon name="checkmark-outline"></ion-icon></div>
-          <div *ngIf="type_button == 2 || type_button == 3" (click)="responseInvitation('refuse', user.id)"><ion-icon name="close-outline"></ion-icon></div>
+          <span *ngIf="type_button == 1" (click)="sendInvitation(user.id)"><ion-icon name="people-outline"></ion-icon></span>
+          <span *ngIf="type_button == 3" (click)="responseInvitation('accept', user.id)"><ion-icon name="checkmark-outline"></ion-icon></span>
+          <span *ngIf="type_button == 2 || type_button == 3" (click)="responseInvitation('refuse', user.id)"><ion-icon name="close-outline"></ion-icon></span>
         </div>
       </div>
     </li>

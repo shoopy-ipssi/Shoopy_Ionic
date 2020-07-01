@@ -11,8 +11,8 @@ import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables
   providers: [VariablesGlobalesComponent]
 })
 export class LoadUsersComponent implements OnInit {
-  private users:  any[any];
-  private type_button = 1;
+  public users:  any[any];
+  public type_button = 1;
   private UID = sessionStorage.getItem('UID')
   public cnt = 0
   constructor(private http: HttpClient, public gv: VariablesGlobalesComponent) { }

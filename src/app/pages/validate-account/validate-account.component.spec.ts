@@ -2,6 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { ValidateAccountComponent } from './validate-account.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 
 describe('ValidateAccountComponent', () => {
   let component: ValidateAccountComponent;
@@ -10,7 +14,8 @@ describe('ValidateAccountComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ValidateAccountComponent ],
-      imports: [IonicModule.forRoot()]
+      providers: [VariablesGlobalesComponent],
+      imports: [IonicModule.forRoot(), RouterModule.forRoot([]), HttpClientModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ValidateAccountComponent);

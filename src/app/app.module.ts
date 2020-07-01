@@ -20,12 +20,21 @@ import { PlayComponent } from './pages/play/play.component';
 import { ForgottenPasswordComponent } from './pages/forgotten-password/forgotten-password.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
 import { ValidateAccountComponent } from './pages/validate-account/validate-account.component';
+import { VariablesGlobalesComponent } from './variables-globales/variables-globales.component';
 
 // the second parameter 'fr-FR' is optional
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent, PlayComponent, ForgottenPasswordComponent, NewPasswordComponent, ValidateAccountComponent],
+  declarations: [
+    AppComponent, 
+    RegisterComponent,
+     LoginComponent, 
+     PlayComponent, 
+     ForgottenPasswordComponent, 
+     NewPasswordComponent, 
+     ValidateAccountComponent, 
+     VariablesGlobalesComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

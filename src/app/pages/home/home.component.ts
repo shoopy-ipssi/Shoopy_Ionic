@@ -25,11 +25,11 @@ export class HomeComponent implements OnInit {
             opacity: 1
         }, 100);
     });
-    }
+    } 
 
   ngOnInit() {
-    this.gv.checkUserLogged()
-    this.typeTextAnimated(test)
+    this.gv.getUser()
+    //this.typeTextAnimated(test)
   }
 
 }

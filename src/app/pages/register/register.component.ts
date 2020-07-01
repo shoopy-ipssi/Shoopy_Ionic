@@ -54,9 +54,7 @@ export class RegisterComponent implements OnInit {
     const encrypt_user = this.EncrDecr.set('123456$#@$^@1ERF', id)
     const linkEncrypt = `${this.gv.FoUrl}validateAccount/${encrypt_user.split('/').join('__').split('=').join('-_-')}`
     const data = {EmailUser : dataForm.email, NameUser: dataForm.username, linkEncrypt: linkEncrypt}
-    console.log(data)
     this.http.post(`${this.gv.apiUrl}createaccount`, data, {headers: this.gv.headers}).subscribe(result => {
-      console.log(result)
       if (result){
         this.sendMail = true
       }
@@ -68,7 +66,6 @@ export class RegisterComponent implements OnInit {
     this.http.post(`${this.gv.apiUrl}createuser`, datas, { headers: this.gv.headers }).
       subscribe((res: Response) => {
         this.log = res;
-        console.log(this.log.insertId)
         if (this.log !== undefined) {
           this.sendMailRegister(this.log.insertId)
           //this.Signin()

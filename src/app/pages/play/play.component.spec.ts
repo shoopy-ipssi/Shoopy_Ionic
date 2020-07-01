@@ -2,6 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { PlayComponent } from './play.component';
+import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 describe('PlayComponent', () => {
   let component: PlayComponent;
@@ -10,7 +15,8 @@ describe('PlayComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PlayComponent ],
-      imports: [IonicModule.forRoot()]
+      providers: [VariablesGlobalesComponent],
+      imports: [IonicModule.forRoot(), HttpClientModule, RouterModule, RouterTestingModule.withRoutes([])]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PlayComponent);

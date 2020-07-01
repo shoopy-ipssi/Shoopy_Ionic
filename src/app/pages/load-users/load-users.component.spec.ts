@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { LoadUsersComponent } from './load-users.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+
 
 describe('LoadUsersComponent', () => {
   let component: LoadUsersComponent;
@@ -10,7 +13,7 @@ describe('LoadUsersComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoadUsersComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), RouterTestingModule.withRoutes([]), HttpClientModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoadUsersComponent);

@@ -14,7 +14,7 @@
         <div id="block_att"></div>
         <div id="block_choice">
         <button *ngFor="let chx of choice" [ngStyle]="{'width.%': 100/choice.length}" class="btn_chx" (click)="loadNextStep(chx.child)"><p>{{chx.action}}</p></button>
-        <ion-button *ngIf="isFinished" id="end" class="ion-text-wrap" [ngStyle]="{'width.%':100, 'height.%':100, 'margin':0}" (click)="this.router.navigate(['pages/Scenario'])"><p>Fin</p></ion-button>
+        <button *ngIf="isFinished" id="end" class="btn_chx" [ngStyle]="{'width.%':100, 'height.%':100, 'margin':0}" (click)="endScenario()"><p>Fin</p></button>
         </div>
     </div>
     <ng-template #loadTemplate class="main_bg_img"><img id="shoopy_gif" src="../../../assets/img/Loadingsome.gif"/></ng-template>

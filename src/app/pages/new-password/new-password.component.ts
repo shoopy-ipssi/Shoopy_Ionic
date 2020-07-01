@@ -49,8 +49,13 @@ export class NewPasswordComponent implements OnInit {
       checkPassword: ['', Validators.required]
     })
     //this.decryptU = this.router.snapshot.paramMap.get('u').split('-_-').join('=').split('__').join('/');
-    this.decryptU = this.EncrDecr.get('123456$#@$^@1ERF', this.router.snapshot.paramMap.get('u').split('-_-').join('=').split('__').join('/'))
-    this.checkUser()
+    const u = this.router.snapshot.paramMap.get('u')
+    if (u != undefined){
+      this.decryptU = this.EncrDecr.get('123456$#@$^@1ERF', u.split('-_-').join('=').split('__').join('/'))
+      this.checkUser()
+    } else {
+      this.route.navigate(['/login'])
+    }
   }
 
 }

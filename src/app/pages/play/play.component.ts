@@ -3,9 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VariablesGlobalesComponent  } from '../../variables-globales/variables-globales.component';
 import { Router } from '@angular/router';
-import * as $ from 'jquery'
-
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-play',
@@ -30,8 +28,7 @@ export class PlayComponent implements OnInit {
   constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobalesComponent, private router: Router, private renderer: Renderer2, private el:ElementRef) {
     this.loading = false  
   }
-    
-    
+
     typeTextAnimated(sentence) {
       var ele = '<span>' + sentence.split('').join('</span><span>') + '</span>';
       
@@ -68,7 +65,6 @@ export class PlayComponent implements OnInit {
       }
       else {
         this.isFinished = true
-        console.log('finished')
       }
       this.choice = data_step
       this.saveStep()
@@ -78,8 +74,7 @@ export class PlayComponent implements OnInit {
       const data = {id_scenario:this.data_scenarios[this.id_etape].scenario_id ,id_step:this.id_etape, id_user:sessionStorage.getItem('UID')}
       this.http.post(`${this.gv.apiUrl}save`, data, {headers: this.gv.headers}).subscribe((res: Response) => { 
         this.idSave = res
-        console.log(this.idSave.insertId)
-        if (parseInt("0"+this.idSave.insertId)> 0){
+        if (parseInt("0"+this.idSave.id)> 0){
           this.saveExist = true
         }
       })
@@ -88,6 +83,9 @@ export class PlayComponent implements OnInit {
       const data = {id_scenario:this.data_scenarios[this.id_etape].scenario_id ,id_step:this.id_etape, id_user:sessionStorage.getItem('UID'), isFinished: this.isFinished}
       this.http.put(`${this.gv.apiUrl}save/${this.idSave}`, data, {headers: this.gv.headers}).subscribe((res: Response) => {
       })
+    }
+    endScenario(){
+      this.router.navigate(['pages/Scenario'])
     }
     saveStep(){ 
       if (!this.saveExist){
@@ -107,7 +105,7 @@ export class PlayComponent implements OnInit {
       }
       this.gv.getUser()
       this.loading = true
-      this.http.get(`${this.gv.mongUrl}scenario`, {params: {id: this.id}}).subscribe((res: Response) => { 
+      this.http.get(`${this.gv.mongUrl}scenario/${this.id}`, {params: {id: this.id}}).subscribe((res: Response) => { 
         this.scenario = res
       this.InitDataScenario(this.scenario)
       if (this.id_step != '') { this.loadNextStep(this.id_step)}

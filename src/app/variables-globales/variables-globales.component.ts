@@ -12,7 +12,7 @@ export class VariablesGlobalesComponent {
   public user : any
   
   public apiUrl = 'https://shoopymysql.herokuapp.com/'
-  public FoUrl = 'https://Shoopy.org/'
+  public FoUrl = 'http://localhost:8100/'//'https://Shoopy.org/'
   public mongUrl = 'https://shoopymongo.herokuapp.com/'
   public cryptVal = '@$^FNARD@75017'
   public headers = new HttpHeaders({
@@ -28,7 +28,7 @@ export class VariablesGlobalesComponent {
   }
   checkUserLogged(){
     if (!this.isLoggedIn && !this.route.url.startsWith("/register")){
-      this.route.navigate(['/login'])
+      this.route.navigate(['login'])
     }
   }
   setisLoggedIn(){
