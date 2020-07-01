@@ -105,7 +105,7 @@ export class PlayComponent implements OnInit {
       }
       this.gv.getUser()
       this.loading = true
-      this.http.get(`${this.gv.mongUrl}scenario/${this.id}`, {params: {id: this.id}}).subscribe((res: Response) => { 
+      this.http.get(`${this.gv.mongUrl}scenario/` + this.id).subscribe((res: Response) => { 
         this.scenario = res
       this.InitDataScenario(this.scenario)
       if (this.id_step != '') { this.loadNextStep(this.id_step)}
