@@ -44,11 +44,7 @@ export class MyProfilComponent implements OnInit {
       subscribe((res: Response) => {
         this.log = res;
         console.log(res)
-<<<<<<< HEAD
         location.reload();
-=======
-        this.router.navigate(['home']);
->>>>>>> 375431feb68ffa7d31a6dfa32575793852c00875
       });
   }
 }
