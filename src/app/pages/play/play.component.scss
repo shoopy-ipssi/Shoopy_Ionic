@@ -1,30 +1,52 @@
 #shoopy_gif {
-    height: 100%;
+    height: 60%;
 }
 
 #shoopy_img {
-    height: 100%;
+    height: 60%;
 }
 
 #shoopy_content {
     height: 50%;
     text-align: center;
 }
-
 #block_att {
-    width: 70%;
+    width:80%;
     padding: 10px;
     margin: auto;
     text-align: center;
+    border:  2px #f1dca7 solid;
+    border-radius: 35px;
+    background :url('../../../assets/img/woodbg.jpg');
+    font-weight: bold;
 }
 
+.btn_chx {
+    margin:0;
+    height:100%;
+    border:  2px #f1dca7 solid;
+    border-radius: 5px;
+    background :url('../../../assets/img/woodbg.jpg');
+    font-weight: bold;
+}
+.btn_chx p {
+    padding: 15px 0;
+    height: 100%;
+}
 #block_choice {
     position: absolute;
     width: 100%;
     bottom: 0;
+    height: 10%;
 }
 
 .wild {
     color: red !important;
     background: white !important;
+}
+.main_bg_img{
+    background: url('../../../assets/img/Lawachara_Forest.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100%;
 }

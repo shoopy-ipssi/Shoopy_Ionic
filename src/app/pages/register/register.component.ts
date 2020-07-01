@@ -48,11 +48,13 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['']);
     }
   }
-  sendMailRegister(){
+  sendMailRegister(idU){
     const dataForm = this.RegisterData.value
-    const encrypt_user = this.EncrDecr.set('123456$#@$^@1ERF', this.log[0].id)
+    const id = idU
+    const encrypt_user = this.EncrDecr.set('123456$#@$^@1ERF', id)
     const linkEncrypt = `${this.gv.FoUrl}validateAccount/${encrypt_user.split('/').join('__').split('=').join('-_-')}`
     const data = {EmailUser : dataForm.email, NameUser: dataForm.username, linkEncrypt: linkEncrypt}
+    console.log(data)
     this.http.post(`${this.gv.apiUrl}createaccount`, data, {headers: this.gv.headers}).subscribe(result => {
       console.log(result)
       if (result){
@@ -66,9 +68,9 @@ export class RegisterComponent implements OnInit {
     this.http.post(`${this.gv.apiUrl}createuser`, datas, { headers: this.gv.headers }).
       subscribe((res: Response) => {
         this.log = res;
-        console.log(res)
-        if (this.log[0] !== undefined) {
-          this.sendMailRegister()
+        console.log(this.log.insertId)
+        if (this.log !== undefined) {
+          this.sendMailRegister(this.log.insertId)
           //this.Signin()
         } else {
           this.router.navigate(['']);
@@ -80,7 +82,7 @@ export class RegisterComponent implements OnInit {
     this.http.post(`${this.gv.apiUrl}login`, datas, { headers: this.gv.headers }).
       subscribe((res: Response) => {
         this.log = res;
-        if (this.log[0] !== undefined) {
+        if (this.log !== undefined) {
           this.Validate();
         } else {
           this.router.navigate(['']);

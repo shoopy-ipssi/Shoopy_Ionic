@@ -33,8 +33,12 @@ export class LoginComponent implements OnInit {
       const decrypted = this.LoginData.value.password
       if (decrypted == this.log[0].password) {
         const email = sessionStorage.setItem('email', this.log[0].email);
-        sessionStorage.setItem('UID', this.log[0].id)
-        console.log(sessionStorage.getItem('UID'))
+        if (this.log[0].isActive){
+          sessionStorage.setItem('UID', this.log[0].id)
+          console.log(sessionStorage.getItem('UID'))
+        } else {
+          alert('Votre compte n\'est pas actif. Veuillez vérifier votre boîte mail.')
+        }
       } else {
         alert('Mot de passe incorrect')
       }

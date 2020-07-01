@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EncrDecrService } from '../../services/crypto.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import {  VariablesGlobalesComponent } from '../../variables-globales/variables-globales.component';
 
@@ -12,11 +12,11 @@ import {  VariablesGlobalesComponent } from '../../variables-globales/variables-
 export class ValidateAccountComponent implements OnInit {
   public decryptU
   public checkActivation = false
-  constructor(public EncrDecr: EncrDecrService, public router: ActivatedRoute, public http: HttpClient, public gv: VariablesGlobalesComponent) { }
+  constructor(public EncrDecr: EncrDecrService, public router: ActivatedRoute, public http: HttpClient, public gv: VariablesGlobalesComponent, public route: Router) { }
 
   validateAccount(){
     const data = {isActive: true}
-    this.http.post(`${this.gv.apiUrl}updateuser/${this.decryptU}`, data, {headers: this.gv.headers}).subscribe(result => {
+    this.http.put(`${this.gv.apiUrl}updateuser/${this.decryptU}`, data, {headers: this.gv.headers}).subscribe(result => {
       if (result){
         this.checkActivation = true
       }
@@ -24,6 +24,7 @@ export class ValidateAccountComponent implements OnInit {
   }
   ngOnInit() {
     this.decryptU = this.EncrDecr.get('123456$#@$^@1ERF', this.router.snapshot.paramMap.get('u').split('-_-').join('=').split('__').join('/'))
+    this.validateAccount()
   }
 
 }

@@ -25,6 +25,7 @@ export class PlayComponent implements OnInit {
   public saveExist = false
   public idSave: any
   public isFinished = false
+  public choice: any
   constructor( private route: ActivatedRoute, private http: HttpClient, public gv: VariablesGlobalesComponent, private router: Router, private renderer: Renderer2, private el:ElementRef) {
     }
     
@@ -57,21 +58,17 @@ export class PlayComponent implements OnInit {
       let etape = this.data_scenarios[id_etape]
       this.typeTextAnimated(etape.text)
       let cnt = etape.childrens.length
-      let choice = ""
+      let data_step = []
       if (cnt > 0){
-        etape.childrens.forEach(child => {
-          choice = choice +`<ion-button id="${child}" class="ion-text-wrap" style='width:${100/cnt}%; margin:0%; height:100%'><p style="margin-top:1rem!important">${this.data_scenarios[child].action}</p></ion-button>`
+        etape.childrens.map(child => {
+          data_step.push({child: child, action :this.data_scenarios[child].action})
         })
-        $('#block_choice').empty().html(choice)
-        //this.renderer.appendChild(document.getElementById('block_att'), choice)
-        etape.childrens.forEach(child =>{
-          $(`#${child}`).on('click', (event: JQuery.Event) => { this.loadNextStep(child); });
-        })
-      } else {
-        this.isFinished = true
-        $('#block_choice').empty().html(`<ion-button id="end" class="ion-text-wrap" style="width:100%"><p>Fin</p></ion-button>`);
-        $(`#end`).on('click', (event: JQuery.Event) => { this.router.navigate(['pages/Scenario']) });
       }
+      else {
+        this.isFinished = true
+        console.log('finished')
+      }
+      this.choice = data_step
       this.saveStep()
     }
 
