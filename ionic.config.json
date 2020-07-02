@@ -1,8 +1,8 @@
 {
-  "name": "Shoopy_Ionic",
-  "integrations": {
-    "capacitor": {},
-    "cordova": {}
-  },
-  "type": "angular"
+    "name": "Shoopy_Ionic",
+    "integrations": {
+        "capacitor": {},
+        "cordova": {}
+    },
+    "type": "angular"
 }
