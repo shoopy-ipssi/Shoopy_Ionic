@@ -5,6 +5,8 @@ import { DisconnectComponent } from './disconnect.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from '../login/login.component';
+import { AppModule } from 'src/app/app.module';
 
 
 describe('DisconnectComponent', () => {
@@ -15,7 +17,7 @@ describe('DisconnectComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ DisconnectComponent ],
       providers: [VariablesGlobalesComponent],
-      imports: [IonicModule.forRoot(), RouterTestingModule.withRoutes([]), HttpClientModule]
+      imports: [AppModule, IonicModule.forRoot(), RouterTestingModule.withRoutes([{path: 'login', component: LoginComponent}]), HttpClientModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(DisconnectComponent);

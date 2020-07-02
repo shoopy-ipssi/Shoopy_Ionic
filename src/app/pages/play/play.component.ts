@@ -108,8 +108,14 @@ export class PlayComponent implements OnInit {
       this.http.get(`${this.gv.mongUrl}scenario/` + this.id).subscribe((res: Response) => { 
         this.scenario = res
       this.InitDataScenario(this.scenario)
-      if (this.id_step != '') { this.loadNextStep(this.id_step)}
-      else { this.loadNextStep(this.scenario[0]._id)}
+      if (this.id_step != '') { 
+        this.loadNextStep(this.id_step)
+      }
+      else { 
+        if (this.scenario[0] != undefined){
+          this.loadNextStep(this.scenario[0]._id)
+        }
+      }
     });
   }
 

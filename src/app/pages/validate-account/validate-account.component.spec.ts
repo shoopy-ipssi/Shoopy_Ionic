@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 describe('ValidateAccountComponent', () => {
   let component: ValidateAccountComponent;
@@ -14,7 +15,7 @@ describe('ValidateAccountComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ValidateAccountComponent ],
-      providers: [VariablesGlobalesComponent],
+      providers: [VariablesGlobalesComponent, { provide: APP_BASE_HREF, useValue : '/'}],
       imports: [IonicModule.forRoot(), RouterModule.forRoot([]), HttpClientModule]
     }).compileComponents();
 

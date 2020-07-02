@@ -6,6 +6,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from '../login/login.component';
+import { AppModule } from 'src/app/app.module';
 
 
 describe('MyFriendsComponent', () => {
@@ -15,9 +17,9 @@ describe('MyFriendsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MyFriendsComponent ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, LoginComponent],
       providers: [VariablesGlobalesComponent],
-      imports: [IonicModule.forRoot(), RouterTestingModule.withRoutes([]), HttpClientModule]
+      imports: [AppModule,IonicModule.forRoot(), RouterTestingModule.withRoutes([{path: 'login', component: LoginComponent}]), HttpClientModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(MyFriendsComponent);

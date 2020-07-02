@@ -7,6 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AppModule } from 'src/app/app.module';
+import { LoginComponent } from '../login/login.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 describe('NewPasswordComponent', () => {
@@ -15,9 +18,9 @@ describe('NewPasswordComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewPasswordComponent ],
-      providers: [VariablesGlobalesComponent],
-      imports: [IonicModule.forRoot(), ReactiveFormsModule, RouterTestingModule.withRoutes([]), HttpClientModule]
+      declarations: [ NewPasswordComponent , LoginComponent],
+      providers: [VariablesGlobalesComponent, { provide: APP_BASE_HREF, useValue : '/'}],
+      imports: [ IonicModule.forRoot(), ReactiveFormsModule, RouterTestingModule.withRoutes([{path: 'login', component: LoginComponent}]), HttpClientModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(NewPasswordComponent);
