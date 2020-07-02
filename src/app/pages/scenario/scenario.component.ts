@@ -29,6 +29,7 @@ export class ScenarioComponent implements OnInit {
       currentPage: 1,
       itemsPerPage: 25,
     };
+    this.route.params.subscribe(val => this.getScenarios())
     this.route.queryParamMap.pipe(map(params => params.get('page'))).subscribe(page => this.config.currentPage = page);
    }
   
@@ -68,6 +69,16 @@ export class ScenarioComponent implements OnInit {
           break;
       }
     });
+  }
+  deleteScenario(id_scenario){
+    this.http.delete(`${this.gv.apiUrl}save/${id_scenario}`, {headers: this.gv.headers}).subscribe((res: Response) => {
+      console.log(res)
+      if (res != undefined && res){
+        this.getScenarios()
+      } else {
+        alert('Une erreur est survenue')
+      }
+    })
   }
   ngOnInit() {
     this.getScenarios();

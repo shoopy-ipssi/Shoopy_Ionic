@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+  
 
 @Component({
   selector: 'app-my-profil',
@@ -14,10 +15,10 @@ export class MyProfilComponent implements OnInit {
   ProfilData: FormGroup;
   log: Response;
   id: string;
-
+                     
+  
   constructor(private http: HttpClient, public fb: FormBuilder, private router: Router, 
     private route: ActivatedRoute, private gv: VariablesGlobalesComponent) { 
-     
     }
 
 
@@ -38,7 +39,7 @@ export class MyProfilComponent implements OnInit {
     this.http.put(`${this.gv.apiUrl}updateuser/${this.id}`, datas, { headers: this.gv.headers }).
       subscribe((res: Response) => {
         this.log = res;
-        this.router.navigate(['home']);
+        this.router.navigate(['']);
       });
   }
 }

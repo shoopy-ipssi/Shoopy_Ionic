@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'play/:id',
     component: PlayComponent
   },
+  {
+    path: 'play/:id/:id_step/:idSave',
+    component: PlayComponent
+  },
   
 ];
 

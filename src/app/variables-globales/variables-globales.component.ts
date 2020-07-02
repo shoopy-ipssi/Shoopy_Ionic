@@ -48,5 +48,8 @@ export class VariablesGlobalesComponent {
         this.user = results[0]
       })
     }
+    else {
+      this.checkUserLogged()
+    }
   }
 }
