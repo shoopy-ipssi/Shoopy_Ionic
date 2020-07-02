@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { registerLocaleData, APP_BASE_HREF } from '@angular/common';
+import { registerLocaleData, APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -47,6 +47,7 @@ registerLocaleData(localeFr, 'fr-FR');
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ export class VariablesGlobalesComponent {
   public user : any
   
   public apiUrl = 'https://shoopymysql.herokuapp.com/'
-  public FoUrl = 'https://Shoopy.org/'
+  public FoUrl = 'https://Shoopy.org/#/'
   public mongUrl = 'https://shoopymongo.herokuapp.com/'
   public cryptVal = '@$^FNARD@75017'
   public headers = new HttpHeaders({
