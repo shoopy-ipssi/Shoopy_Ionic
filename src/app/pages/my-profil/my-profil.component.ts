@@ -29,7 +29,6 @@ export class MyProfilComponent implements OnInit {
     return this.http.get(this.gv.apiUrl+'user', data).subscribe((results: Response) => {
       this.user = results;
       this.ProfilData = this.fb.group({
-        username: [this.user.username, Validators.required],
         id_shoopy: [this.user.id_shoopy, Validators.required],
       });;
     })

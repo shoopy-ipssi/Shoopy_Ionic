@@ -12,26 +12,6 @@
         <form (ngSubmit)="UpdateProfil()" [formGroup]="ProfilData" *ngFor="let use of user">
             <ion-list lines="full" class="ion-no-margin ion-no-padding">
                 <ion-item>
-                    <ion-label position="stacked">Email
-                    </ion-label>
-                    <ion-input disabled type="email" name="email">{{use.email}}</ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label position="stacked">Firstname
-                    </ion-label>
-                    <ion-input disabled type="text" name="firstname">{{use.firstname}}</ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label position="stacked">Lastname
-                    </ion-label>
-                    <ion-input disabled type="text" name="lastname">{{use.lastname}}</ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label position="stacked">Username
-                    </ion-label>
-                    <ion-input required type="text" formControlName="username" name="username">{{use.username}}</ion-input>
-                </ion-item>
-                <ion-item>
                     <ion-label position="stacked">Shoopy
                         <ion-text color="danger">*</ion-text>
                     </ion-label>
