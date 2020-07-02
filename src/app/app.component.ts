@@ -72,13 +72,14 @@ export class AppComponent implements OnInit {
     return `url('${this.gv.FoUrl}/assets/img/Lawachara_Forest.jpg')`;
   }
   ngOnInit() {
-      this.getUserMenu()
-      if (window.location.pathname.split('/')[1] != 'newPassword' && window.location.pathname.split('/')[1] != 'validateAccount' && window.location.pathname.split('/')[2] != 'newPassword' && window.location.pathname.split('/')[2] != 'validateAccount' ) { console.log(window.location.pathname.split('/'))}//this.gv.checkUserLogged() }
-      
-      const path = window.location.pathname.split('pages/')[1];
+      console.log(window.location.pathname.split('/'))
+      if (window.location.pathname.split('/')[1] != 'validateAccount' && window.location.pathname.split('/')[2] != 'validateAccount') {console.log('different')}
+      if (window.location.pathname.split('/')[1] != 'newPassword' && window.location.pathname.split('/')[1] != 'validateAccount' && window.location.pathname.split('/')[2] != 'newPassword' && window.location.pathname.split('/')[2] != 'validateAccount' ) { console.log(window.location.pathname.split('/')) }
+      console.log("ok")
+      /*const path = window.location.pathname.split('pages/')[1];
       if (path !== undefined) {
         this.selectedIndex = this.appPages.findIndex(page => page.techTitle === path);
       }
-      localStorage.setItem('Shoopy', '1');  
+      localStorage.setItem('Shoopy', '1');  */
   }
 }

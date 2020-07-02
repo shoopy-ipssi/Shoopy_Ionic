@@ -121,9 +121,6 @@ export class PlayComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (browserRefresh){
-      this.router.navigate(['pages/Scenario'])
-    } else {
       this.gv.getUser()
 
       this.id = this.route.snapshot.paramMap.get('id');
@@ -146,5 +143,5 @@ export class PlayComponent implements OnInit {
         }
       })
     };
-  }
+  
 }

@@ -39,6 +39,10 @@ const routes: Routes = [
     component: ValidateAccountComponent
   },
   {
+    path: '#/validateAccount/:u',
+    component: ValidateAccountComponent
+  },
+  {
     path: 'play/:id',
     component: PlayComponent
   },

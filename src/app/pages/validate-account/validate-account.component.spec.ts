@@ -15,7 +15,7 @@ describe('ValidateAccountComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ValidateAccountComponent ],
-      providers: [VariablesGlobalesComponent, { provide: APP_BASE_HREF, useValue : '/'}],
+      providers: [VariablesGlobalesComponent],
       imports: [IonicModule.forRoot(), RouterModule.forRoot([]), HttpClientModule]
     }).compileComponents();
 

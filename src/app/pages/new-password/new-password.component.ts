@@ -51,6 +51,7 @@ export class NewPasswordComponent implements OnInit {
     //this.decryptU = this.router.snapshot.paramMap.get('u').split('-_-').join('=').split('__').join('/');
     const u = this.router.snapshot.paramMap.get('u')
     if (u != undefined){
+      console.log('ok')
       this.decryptU = this.EncrDecr.get('123456$#@$^@1ERF', u.split('-_-').join('=').split('__').join('/'))
       this.checkUser()
     } else {
