@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
 import { MyProfilComponent } from './my-profil.component';
 import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables-globales.component';
 import { HttpClientModule } from '@angular/common/http';
