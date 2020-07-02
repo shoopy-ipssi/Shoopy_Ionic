@@ -34,7 +34,7 @@ export class PlayComponent implements OnInit {
       
       $('#block_att').empty()
       $(ele).hide().appendTo('#block_att').each(function (i) {
-          $(this).delay(50 * i).css({
+          $(this).delay(25 * i).css({
               display: 'inline',
               opacity: 0
           }).animate({
