@@ -1,8 +1,8 @@
 {
-  "name": "LeMeilleurCoin",
-  "integrations": {
-    "capacitor": {},
-    "cordova": {}
-  },
-  "type": "angular"
+    "name": "Shoopy",
+    "integrations": {
+        "capacitor": {},
+        "cordova": {}
+    },
+    "type": "angular"
 }
