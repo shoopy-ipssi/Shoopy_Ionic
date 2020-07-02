@@ -6,6 +6,8 @@ import { VariablesGlobalesComponent } from 'src/app/variables-globales/variables
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ScenarioComponent } from '../scenario/scenario.component';
+import { AppModule } from 'src/app/app.module';
 
 
 describe('PlayComponent', () => {
@@ -14,9 +16,11 @@ describe('PlayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlayComponent ],
+      declarations: [ PlayComponent, ScenarioComponent ],
       providers: [VariablesGlobalesComponent],
-      imports: [IonicModule.forRoot(), HttpClientModule, RouterModule, RouterTestingModule.withRoutes([])]
+      imports: [IonicModule.forRoot(), HttpClientModule, RouterModule, RouterTestingModule.withRoutes([
+        {path: 'pages/Scenario', component: ScenarioComponent}
+      ])]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PlayComponent);
