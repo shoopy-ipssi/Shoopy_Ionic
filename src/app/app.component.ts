@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
       this.getUserMenu()
-      if (window.location.pathname.split('/')[1] != 'newPassword' && window.location.pathname.split('/')[1] != 'validateAccount' && window.location.pathname.split('/')[2] != 'newPassword' && window.location.pathname.split('/')[2] != 'validateAccount' ) { console.log(window.location.pathname.split('/'))//this.gv.checkUserLogged() }
+      if (window.location.pathname.split('/')[1] != 'newPassword' && window.location.pathname.split('/')[1] != 'validateAccount' && window.location.pathname.split('/')[2] != 'newPassword' && window.location.pathname.split('/')[2] != 'validateAccount' ) { console.log(window.location.pathname.split('/'))}//this.gv.checkUserLogged() }
       
       const path = window.location.pathname.split('pages/')[1];
       if (path !== undefined) {
