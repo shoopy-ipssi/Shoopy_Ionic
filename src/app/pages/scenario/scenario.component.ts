@@ -72,7 +72,6 @@ export class ScenarioComponent implements OnInit {
   }
   deleteScenario(id_scenario){
     this.http.delete(`${this.gv.apiUrl}save/${id_scenario}`, {headers: this.gv.headers}).subscribe((res: Response) => {
-      console.log(res)
       if (res != undefined && res){
         this.getScenarios()
       } else {

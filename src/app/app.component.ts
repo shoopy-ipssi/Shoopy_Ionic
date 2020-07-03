@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Scénario',
-      url: 'pages/Scenario',
+      url: 'pages/Scenarios',
       icon: 'journal'
     },
     {
@@ -72,10 +72,7 @@ export class AppComponent implements OnInit {
     return `url('${this.gv.FoUrl}/assets/img/Lawachara_Forest.jpg')`;
   }
   ngOnInit() {
-      console.log(window.location.pathname.split('/'))
-      if (window.location.pathname.split('/')[1] != 'validateAccount' && window.location.pathname.split('/')[2] != 'validateAccount') {console.log('different')}
-      if (window.location.pathname.split('/')[1] != 'newPassword' && window.location.pathname.split('/')[1] != 'validateAccount' && window.location.pathname.split('/')[2] != 'newPassword' && window.location.pathname.split('/')[2] != 'validateAccount' ) { console.log(window.location.pathname.split('/')) }
-      console.log("ok")
+      if (window.location.pathname.split('/')[1] != 'newPassword' && window.location.pathname.split('/')[1] != 'validateAccount' && window.location.pathname.split('/')[2] != 'newPassword' && window.location.pathname.split('/')[2] != 'validateAccount' ) { }
       /*const path = window.location.pathname.split('pages/')[1];
       if (path !== undefined) {
         this.selectedIndex = this.appPages.findIndex(page => page.techTitle === path);

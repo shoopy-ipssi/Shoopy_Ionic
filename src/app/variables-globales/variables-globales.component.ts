@@ -27,7 +27,6 @@ export class VariablesGlobalesComponent {
     }
   }
   checkUserLogged(){
-    console.log(this.route.url)
     if (!this.isLoggedIn && !this.route.url.startsWith("/register")){
       this.route.navigate(['login'])
     }
@@ -43,7 +42,6 @@ export class VariablesGlobalesComponent {
     this.setisLoggedIn()
   }
   getUser(){
-    console.log(this.route.url)
     const data = { params: {userID: sessionStorage.getItem('UID')}}
     if (this.getisLoggedIn()){ 
       return this.http.get(`${this.apiUrl}user`, data).subscribe(results => {

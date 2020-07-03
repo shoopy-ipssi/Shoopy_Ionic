@@ -102,9 +102,7 @@ export class PlayComponent implements OnInit {
   endScenario(){
     this.isFinished = true
     const data = {id_scenario:this.data_scenarios[this.id_etape].scenario_id ,id_step:this.id_etape, id_user:sessionStorage.getItem('UID'), isFinished: this.isFinished}
-    console.log(data)
     this.http.put(`${this.gv.apiUrl}save/${this.idSave.id}`, data, {headers: this.gv.headers}).subscribe((res: Response) => {
-      console.log(res)
       if (this.isFinished){
         this.router.navigate(['pages/Scenario'])
       }
