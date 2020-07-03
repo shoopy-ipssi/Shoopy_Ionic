@@ -16,6 +16,7 @@
                 </ion-label>
                 <ion-input required type="email" formControlName="email" name="email"></ion-input>
             </ion-item>
+            <ion-label *ngIf="emailAlready">Cette adresse mail est déjà associée à un compte.</ion-label>
 
             <ion-item>
                 <ion-label position="stacked">Password
@@ -40,6 +41,7 @@
                 </ion-label>
                 <ion-input required type="text" formControlName="username" name="username"></ion-input>
             </ion-item>
+            <ion-label *ngIf="usernameAlready">Ce pseudo est déjà associé à un compte.</ion-label>
             
             <div class="ion-padding">
                 <ion-button expand="block" type="submit" class="ion-no-margin" color="primary" type="submit">Inscription</ion-button>
@@ -49,5 +51,6 @@
             </div>
         </ion-list>
     </form>
+    
     <ng-template #sendInf>Un mail de validation vous a été envoyé sur votre boîte mail.</ng-template>
 </ion-content>
